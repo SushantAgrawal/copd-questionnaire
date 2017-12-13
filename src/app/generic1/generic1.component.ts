@@ -17,7 +17,6 @@ export class Generic1Component implements OnInit {
     activatedRoute
     .params
     .subscribe(param => {
-      debugger;
       param.pageName && (this.pageName = param.pageName);
       this.pageObject = navMap[this.pageName];
       this.showPage();
