@@ -1,0 +1,47 @@
+<div class="mainContainer">
+  <div *ngIf="pageObject.type=='multiple'">
+    <table>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let item of pageObject.qustions ; let g = index">
+          <td>{{item.text}}</td>
+          <td>
+            <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">
+              <div *ngFor="let option of item.options ; let h = index">
+                <mat-button-toggle [value]="option.score">{{option.score}}
+                </mat-button-toggle>
+                <br/>
+                <div>{{option.text}}</div>
+              </div>
+            </mat-button-toggle-group>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="pageObject.type=='single'">
+
+    <div *ngFor="let item of pageObject.qustions ; let g = index">
+      <div>
+        {{item.text}}
+      </div>
+      <div>
+        <mat-radio-group [(ngModel)]="item.answer_text">
+          <table>
+            <tr *ngFor="let option of item.options ; let h = index">
+              <td>{{option.text}}</td>
+              <td>
+                <mat-radio-button [value]="option.text">
+                </mat-radio-button>
+              </td>
+            </tr>
+          </table>
+        </mat-radio-group>
+      </div>
+    </div>
+  </div>
+  <app-navigate [pageObject]="pageObject"></app-navigate>
+</div>
