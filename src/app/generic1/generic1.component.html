@@ -1,4 +1,15 @@
 <div class="mainContainer">
+    <div *ngIf="pageObject.type=='multipleSelect'">
+        <table>
+            <tr *ngFor="let item of pageObject.qustions ; let g = index">
+               <td *ngFor="let option of item.options ; let h = index">
+                  <mat-checkbox  [(ngModel)]="option.checked">{{option.text}}</mat-checkbox>
+               </td>
+            </tr>
+        </table>
+        
+
+    </div>
   <div *ngIf="pageObject.type=='multiple'">
     <table>
       <tr>
@@ -23,7 +34,6 @@
     </table>
   </div>
   <div *ngIf="pageObject.type=='single'">
-
     <div *ngFor="let item of pageObject.qustions ; let g = index">
       <div>
         {{item.text}}
@@ -43,5 +53,27 @@
       </div>
     </div>
   </div>
+  <div *ngIf="pageObject.type=='mix'">
+      <table>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+        <tbody>
+          <tr *ngFor="let item of pageObject.qustions ; let g = index">
+            <td>{{item.text}}</td>
+            <td>
+              <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text" (change)="change($event)">
+                <div *ngFor="let option of item.options ; let h = index">
+                  <mat-button-toggle [value]="option.text">{{option.text}}
+                  </mat-button-toggle>
+                  <br/>                 
+                </div>
+              </mat-button-toggle-group>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   <app-navigate [pageObject]="pageObject"></app-navigate>
 </div>

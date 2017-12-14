@@ -22,13 +22,14 @@ export class Generic1Component implements OnInit {
       this.showPage();
     });
    }
-   showPage() {
-   
-
+   showPage() {  
    }
 
 
   ngOnInit() {
+  }
+  change(event) {
+    debugger;
   }
 
 }

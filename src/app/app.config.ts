@@ -4,9 +4,92 @@ export const welcomeMap = {
     all: 'welcomec'
 };
 export const navMap = {
-    page1: {
+    page1:
+    {
+        descr1: `Please Tell Us The Reason For Your Visit Today`,
+        text: `How often do you cough?`,
+        jumpTo:'page2',
+        type:'multipleSelect',
+        qustions: [
+            {
+                options: [
+                    {
+                        text: "COPD",
+                        checked:false
+                    },
+                    {
+                        text: "Coughing up Blood",
+                        checked:false
+                    },
+                    {
+                        text: "Abnormal CT/Chest X-Ray",
+                        checked:false
+                    }
+                ]
+            },
+            {
+                options: [
+                    {
+                        text: "Pulmonary Embolism",
+                        checked:false
+                    },
+                    {
+                        text: "Ashtma",
+                        checked:false
+                    },
+                    {
+                        text: "Allergies/Sinus Congestion",
+                        checked:false
+                    }
+                ]
+            },
+            {
+                options: [
+                    {
+                        text: "Cough",
+                        checked:false
+                    },
+                    {
+                        text: "Chest Pain/Pressure",
+                        checked:false
+                    },
+                    {
+                        text: "Pneumonia/Infection",
+                        checked:false
+                    }
+                ]
+            },
+            {
+                options: [
+                    {
+                        text: "Shortness of Breath",
+                        checked:false
+                    },
+                    {
+                        text: "Wheezing/Chest Tightness",
+                        checked:false
+                    },
+                    {
+                        text: "Low Oxygen",
+                        checked:false
+                    }
+                ]
+            },
+            {
+                options: [
+                    {
+                        text: "Other",
+                        checked:false
+                    }
+                ]
+            }
+
+        ]
+
+    },
+    page2: {
         descr1: `Please Complete the COPD Assesment Test (CAT) below:`,
-        jumpTo:'page2',       
+        jumpTo:'page3',       
         type:'multiple',
         qustions: [
             {
@@ -263,9 +346,9 @@ export const navMap = {
             }
         ]
     },
-    page2: {
+    page3: {
         descr1: `Please complete the Asthma Control Test (ACT) below:`,
-        jumpTo:'page3',       
+        jumpTo:'page4',       
         type:'multiple',
         qustions: [
             {
@@ -367,9 +450,9 @@ export const navMap = {
             }
         ]
     },
-    page3: {
+    page4: {
         descr1: `Asthma Control Test (ACT) continued`,
-        jumpTo:'page4',        
+        jumpTo:'page5',        
         type:'multiple',
         qustions: [
             {
@@ -438,9 +521,9 @@ export const navMap = {
             }
         ]
     },
-    page4: {
+    page5: {
         descr1: `Dyspnea test (mMRC):`,
-        jumpTo:'page5',
+        jumpTo:'page6',
         type:'single',
         qustions: [
             {
@@ -471,9 +554,9 @@ export const navMap = {
             }
         ]
     },
-    page5: {
+    page6: {
         descr1: `The Quality of your Days`,
-        jumpTo:'page6',
+        jumpTo:'page7',
         type:'single',
         qustions: [
             {
@@ -504,7 +587,7 @@ export const navMap = {
             }
         ]
     },
-    page6: {
+    page7: {
         descr1: `You Activity level`,
         jumpTo:'page1',
         type:'single',
@@ -529,6 +612,177 @@ export const navMap = {
                         text: 'I never get execercise',
                         score: ``
                     }
+                ]
+            }
+        ]
+    },
+    page8: {
+        descr1:`Please answer the following questions about your health over the last 12 months:`,
+        jumpTo:'page9',
+        type:'mix',
+        qustions: [
+            {
+                text: `How many exacerbations have you had over the last 12 months?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: `0`
+                    }, 
+                    {
+                        text: `1`
+                    }, {
+                        text: `2`
+                    }, {
+                        text: `3`
+                    }, {
+                        text: `4`
+                    }, {
+                        text: `5`
+                    },
+                    {
+                        text: `+`
+                    }
+                ]
+            },
+            {
+                text: `How many exacerbations lead you to visit the emergency or urgent care?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: `0`
+                    }, 
+                    {
+                        text: `1`
+                    }, {
+                        text: `2`
+                    }, {
+                        text: `3`
+                    }, {
+                        text: `4`
+                    }, {
+                        text: `5`
+                    },
+                    {
+                        text: `+`
+                    }
+                ]
+            },
+            {
+                text: `How many of the above exacerbations required hospital admission?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: `0`
+                    }, 
+                    {
+                        text: `1`
+                    }, {
+                        text: `2`
+                    }, {
+                        text: `3`
+                    }, {
+                        text: `4`
+                    }, {
+                        text: `5`
+                    },
+                    {
+                        text: `+`
+                    }
+                ]
+            },
+            {
+                text: `Were you prescribed antibiotics by another provider?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: `Yes`
+                    }, 
+                    {
+                        text: `No`
+                    }
+                ]
+            },
+            {
+                text: `Were you prescribed Prednisone (or similar rescue inhaler) by another provider?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: `Yes`
+                    }, 
+                    {
+                        text: `No`
+                    }
+                ]
+            }            
+        ]
+    },
+    page9: {
+        descr1: `Asthma Control Test (ACT) continued`,
+        jumpTo:'page10',        
+        type:'multiple',
+        qustions: [
+            {
+                text: `During the past 4 weeks, how often have you used 
+                your rescue inhaler or nebulizer medicine (such as albuterol)?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: '3 or more times per day',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '1 to 2 times per day',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '2 to 3 times per week',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Once a week or less',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Not at All',
+                        score: `5`,
+                        checked: `false`
+                    },
+                ]
+            },
+            {
+                text: `How would you rate your asthma control during the past 4 weeks`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Not Controlled',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Poorly Controlled',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Somewhat Controlled',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Well Controled',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Completely Controlled',
+                        score: `5`,
+                        checked: `false`
+                    },
+
                 ]
             }
         ]
