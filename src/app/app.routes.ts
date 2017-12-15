@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import { ControlComponent } from './control/control.component';
 // import {}
-// import {WelcomeaComponent} from './welcomea/welcomea.component';
+ import {WelcomeaComponent} from './welcomea/welcomea.component';
 // import {WelcomebComponent} from './welcomeb/welcomeb.component';
 // import {WelcomecComponent} from './welcomec/welcomec.component';
 import {Generic1Component} from './generic1/generic1.component';
@@ -14,7 +14,7 @@ export const ROUTES : Routes = [
       pathMatch: 'full'
     }, {
       path: 'welcomea',
-      component: ControlComponent
+      component: WelcomeaComponent
     }, {
       path: 'welcomeb',
       component: ControlComponent

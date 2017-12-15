@@ -5,92 +5,100 @@ export const welcomeMap = {
 };
 export const navMap = {
     page1:
-    {
-        descr1: `Please Tell Us The Reason For Your Visit Today`,
-        text: `How often do you cough?`,
-        jumpTo:'page2',
-        type:'multipleSelect',
-        qustions: [
-            {
-                options: [
-                    {
-                        text: "COPD",
-                        checked:false
-                    },
-                    {
-                        text: "Coughing up Blood",
-                        checked:false
-                    },
-                    {
-                        text: "Abnormal CT/Chest X-Ray",
-                        checked:false
-                    }
-                ]
-            },
-            {
-                options: [
-                    {
-                        text: "Pulmonary Embolism",
-                        checked:false
-                    },
-                    {
-                        text: "Ashtma",
-                        checked:false
-                    },
-                    {
-                        text: "Allergies/Sinus Congestion",
-                        checked:false
-                    }
-                ]
-            },
-            {
-                options: [
-                    {
-                        text: "Cough",
-                        checked:false
-                    },
-                    {
-                        text: "Chest Pain/Pressure",
-                        checked:false
-                    },
-                    {
-                        text: "Pneumonia/Infection",
-                        checked:false
-                    }
-                ]
-            },
-            {
-                options: [
-                    {
-                        text: "Shortness of Breath",
-                        checked:false
-                    },
-                    {
-                        text: "Wheezing/Chest Tightness",
-                        checked:false
-                    },
-                    {
-                        text: "Low Oxygen",
-                        checked:false
-                    }
-                ]
-            },
-            {
-                options: [
-                    {
-                        text: "Other",
-                        checked:false
-                    }
-                ]
-            }
+        {
+            descr1: `Please Tell Us The Reason For Your Visit Today`,
+            text: `How often do you cough?`, 
+            domain:'controler',          
+            jumpTo: (copd,ashtma) => (
+                copd ? 'page2'
+               : (ashtma ?'page3':'page5')               
+             ),
+            type: 'multipleSelect',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "COPD",
+                            checked: false
+                        },
+                        {
+                            text: "Coughing up Blood",
+                            checked: false
+                        },
+                        {
+                            text: "Abnormal CT/Chest X-Ray",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Pulmonary Embolism",
+                            checked: false
+                        },
+                        {
+                            text: "Ashtma",
+                            checked: false
+                        },
+                        {
+                            text: "Allergies/Sinus Congestion",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Cough",
+                            checked: false
+                        },
+                        {
+                            text: "Chest Pain/Pressure",
+                            checked: false
+                        },
+                        {
+                            text: "Pneumonia/Infection",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Shortness of Breath",
+                            checked: false
+                        },
+                        {
+                            text: "Wheezing/Chest Tightness",
+                            checked: false
+                        },
+                        {
+                            text: "Low Oxygen",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Other",
+                            checked: false
+                        }
+                    ]
+                }
 
-        ]
+            ]
 
-    },
+        },
     page2: {
         descr1: `Please Complete the COPD Assesment Test (CAT) below:`,
-        jumpTo:'page3',       
-        type:'multiple',
+        // jumpTo: 'page3',
+        jumpTo: (ashtma) => (
+            (ashtma ?'page3':'page5')               
+         ),
+        type: 'multiple',
+        domain:'CAT', 
         qustions: [
             {
                 text: `How often do you cough?`,
@@ -348,8 +356,8 @@ export const navMap = {
     },
     page3: {
         descr1: `Please complete the Asthma Control Test (ACT) below:`,
-        jumpTo:'page4',       
-        type:'multiple',
+        jumpTo: 'page4',
+        type: 'multiple',
         qustions: [
             {
                 text: `In the past 4 weeks, how much did your asthma keep you from getting as much done at home and/or work?`,
@@ -452,8 +460,8 @@ export const navMap = {
     },
     page4: {
         descr1: `Asthma Control Test (ACT) continued`,
-        jumpTo:'page5',        
-        type:'multiple',
+        jumpTo: 'page5',
+        type: 'multiple',
         qustions: [
             {
                 text: `During the past 4 weeks, how often have you used 
@@ -523,8 +531,8 @@ export const navMap = {
     },
     page5: {
         descr1: `Dyspnea test (mMRC):`,
-        jumpTo:'page6',
-        type:'single',
+        jumpTo: 'page6',
+        type: 'single',
         qustions: [
             {
                 text: `Select the response that best describes, when you become breathless:`,
@@ -556,8 +564,8 @@ export const navMap = {
     },
     page6: {
         descr1: `The Quality of your Days`,
-        jumpTo:'page7',
-        type:'single',
+        jumpTo: 'page7',
+        type: 'single',
         qustions: [
             {
                 text: `Select the response that best describes the quality of your days:`,
@@ -589,8 +597,8 @@ export const navMap = {
     },
     page7: {
         descr1: `You Activity level`,
-        jumpTo:'page1',
-        type:'single',
+        jumpTo: 'page8',
+        type: 'single',
         qustions: [
             {
                 text: `Select the response that best describes your activity level:`,
@@ -617,17 +625,19 @@ export const navMap = {
         ]
     },
     page8: {
-        descr1:`Please answer the following questions about your health over the last 12 months:`,
-        jumpTo:'page9',
-        type:'mix',
+        descr1: `Please answer the following questions about your health over the last 12 months:`,
+        jumpTo: 'page9',
+        type: 'mix',
+        domain:'Clinical Awareness',            
         qustions: [
             {
                 text: `How many exacerbations have you had over the last 12 months?`,
                 answer_text: '',
+                node:'parent',
                 options: [
                     {
                         text: `0`
-                    }, 
+                    },
                     {
                         text: `1`
                     }, {
@@ -647,10 +657,11 @@ export const navMap = {
             {
                 text: `How many exacerbations lead you to visit the emergency or urgent care?`,
                 answer_text: '',
+                node:'child1',
                 options: [
                     {
                         text: `0`
-                    }, 
+                    },
                     {
                         text: `1`
                     }, {
@@ -670,10 +681,11 @@ export const navMap = {
             {
                 text: `How many of the above exacerbations required hospital admission?`,
                 answer_text: '',
+                node:'child2',
                 options: [
                     {
                         text: `0`
-                    }, 
+                    },
                     {
                         text: `1`
                     }, {
@@ -696,7 +708,7 @@ export const navMap = {
                 options: [
                     {
                         text: `Yes`
-                    }, 
+                    },
                     {
                         text: `No`
                     }
@@ -708,83 +720,899 @@ export const navMap = {
                 options: [
                     {
                         text: `Yes`
-                    }, 
+                    },
                     {
                         text: `No`
                     }
                 ]
-            }            
+            }
         ]
     },
     page9: {
-        descr1: `Asthma Control Test (ACT) continued`,
-        jumpTo:'page10',        
-        type:'multiple',
+        descr1: `Alcohol and Drug Use`,
+        jumpTo: 'page10',
+        type: 'mix',
         qustions: [
             {
-                text: `During the past 4 weeks, how often have you used 
-                your rescue inhaler or nebulizer medicine (such as albuterol)?`,
+                text: `Do you drink alcohol?`,
                 answer_text: '',
                 options: [
                     {
-                        text: '3 or more times per day',
-                        score: `1`,
-                        checked: `false`
+                        text: 'Yes'
                     },
                     {
-                        text: '1 to 2 times per day',
-                        score: `2`,
-                        checked: `false`
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `Do you smoke marijuana?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yes'
                     },
                     {
-                        text: '2 to 3 times per week',
-                        score: `3`,
-                        checked: `false`
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `Do you use recreational drugs?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yes'
                     },
                     {
-                        text: 'Once a week or less',
-                        score: `4`,
-                        checked: `false`
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `Do you have a dependency on any substance?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yes'
                     },
                     {
-                        text: 'Not at All',
-                        score: `5`,
-                        checked: `false`
+                        text: 'No'
+                    }
+                ]
+            },
+        ]
+    },
+    page10: {
+        descr1: `Your Smoking History`,
+        jumpTo: 'page11',
+        type: 'allComponent',
+        domain:"Smoking",
+        qustions: [
+            {
+                text: `Do you live, or frequently visit with someone who smokes?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `Have you recently been exposed to:`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Non-Tobacco Smoke'
+                    },
+                    {
+                        text: 'Dust'
+                    },
+                    {
+                        text: 'Fumes'
+                    },
+                    {
+                        text: 'Chemicals'
+                    }
+                ]
+            },
+            {
+                text: `Do you currently use tobacco?`,
+                answer_text: '',
+                node:'parent',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `If yes, what type of product do you use?`,
+                answer_text: '',
+                node:'child1',
+                options: [
+                    {
+                        text: 'Cigarettes'
+                    },
+                    {
+                        text: 'Chew'
+                    },
+                    {
+                        text: 'Pipe'
+                    },
+                    {
+                        text: 'Cigar'
+                    },
+                    {
+                        text: 'Electronic Cigarettes'
+                    },
+                    {
+                        text: 'Snuff'
+                    }
+                ]
+            },
+            {
+                text: `How often do you use/smoke cigaretess per day?`,
+                answer_text: '',
+                node:'Cigarettes',
+                options: [
+                    {
+                        text: 'Less than 1 pack per day'
+                    },
+                    {
+                        text: '1 pack per day'
+                    },
+                    {
+                        text: '2 packs per day'
+                    },
+                    {
+                        text: '3 or more packs per day'
+                    }
+                ]
+            },
+            {
+                text: `How offten do you use/smoke chew per day?`,
+                answer_text: '',
+                node:'Chew',
+                options: [
+                    {
+                        text: 'Monthly'
+                    },
+                    {
+                        text: 'Weekly'
+                    },
+                    {
+                        text: 'Daily'
+                    }
+                ]
+            },
+            {
+                text: `How offten do you use/smoke a pipe per day?`,
+                answer_text: '',
+                node:'Pipe',
+                options: [
+                    {
+                        text: 'Monthly'
+                    },
+                    {
+                        text: 'Weekly'
+                    },
+                    {
+                        text: 'Daily'
                     },
                 ]
             },
             {
-                text: `How would you rate your asthma control during the past 4 weeks`,
+                text: `How often do you use/smoke cigars per day?`,
+                node:'Cigar',
                 answer_text: '',
                 options: [
                     {
-                        text: 'Not Controlled',
-                        score: `1`,
-                        checked: `false`
+                        text: 'Monthly'
                     },
                     {
-                        text: 'Poorly Controlled',
-                        score: `2`,
-                        checked: `false`
+                        text: 'Weekly'
                     },
                     {
-                        text: 'Somewhat Controlled',
-                        score: `3`,
-                        checked: `false`
+                        text: 'Daily'
+                    }
+                ]
+            },
+            {
+                text: `How often do you use/smoke electronic cigarettes per day?`,
+                answer_text: '',
+                node:'Electronic Cigarettes',
+                options: [
+                    {
+                        text: 'Monthly'
                     },
                     {
-                        text: 'Well Controled',
-                        score: `4`,
-                        checked: `false`
+                        text: 'Weekly'
                     },
                     {
-                        text: 'Completely Controlled',
-                        score: `5`,
-                        checked: `false`
+                        text: 'Daily'
+                    }
+                ]
+            },
+            {
+                text: `How often do you use/smoke snuff per day?`,
+                answer_text: '',
+                node:'Snuff',
+                options: [
+                    {
+                        text: 'Monthly'
                     },
-
+                    {
+                        text: 'Weekly'
+                    },
+                    {
+                        text: 'Daily'
+                    }
+                ]
+            },
+            {
+                text: `How many years have you used tobacco products?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: '5 or less'
+                    },
+                    {
+                        text: '6 to 10'
+                    },
+                    {
+                        text: '11 to 15'
+                    },
+                    {
+                        text: '16 or more'
+                    }
+                ]
+            },
+            {
+                text: `Please select the date or select number of years you have quit using tobacco products?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Month and year selector'
+                    },
+                    {
+                        text: 'Year selector'
+                    }
                 ]
             }
         ]
-    }
+    },
+    page11: {
+        descr1: `Your social history`,
+        jumpTo: 'page12',
+        domain:'CA-SocialHistory',
+        type: 'mix',
+        qustions: [
+            {
+                text: `Did you migrate to the U.S.A?`,
+                answer_text: '',
+                node:'parent',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `If yes, from which continent?`,
+                answer_text: '',
+                node:'child',
+                options: [
+                    {
+                        text: 'Africa'
+                    },
+                    {
+                        text: 'Antartica'
+                    },
+                    {
+                        text: 'Asia'
+                    },
+                    {
+                        text: 'Europe'
+                    },
+                    {
+                        text: 'South America'
+                    }
+                ]
+            },
+            {
+                text: `How many years have you lived in the U.S.A?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: '5 or less'
+                    },
+                    {
+                        text: '6 to 10'
+                    },
+                    {
+                        text: '11 to 15'
+                    },
+                    {
+                        text: '16 or more'
+                    }
+                ]
+            },
+            {
+                text: `Do you have a dependency on any substance?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+        ]
+    },
+    page12:
+        {
+            descr1: `Health Conditions`,
+            text: `Select all the health conditions you currently have`,
+            jumpTo: 'page13',
+            type: 'multipleSelect',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "Asthma",
+                            checked: false
+                        },
+                        {
+                            text: "Pneumonia/Infection",
+                            checked: false
+                        },
+                        {
+                            text: "Hay Fever/Alergic Rhinitis",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Interstitial Lung Disease",
+                            checked: false
+                        },
+                        {
+                            text: "Lung Nodule/Lung Mass",
+                            checked: false
+                        },
+                        {
+                            text: "Chronic Bronchitis",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Tuberculosis (TB)",
+                            checked: false
+                        },
+                        {
+                            text: "DVT/Venous Thrombus",
+                            checked: false
+                        },
+                        {
+                            text: "Obstructive Lung Disease",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Sleep Apnea",
+                            checked: false
+                        },
+                        {
+                            text: "COPD or Emphysema",
+                            checked: false
+                        },
+                        {
+                            text: "Positive TB Test",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Pulmonary Embolism",
+                            checked: false
+                        },
+                        {
+                            text: "Sinus Disease",
+                            checked: false
+                        },
+                        {
+                            text: "Lung Cancer",
+                            checked: false
+                        }
+                    ]
+                },
+            ]
+        },
+    page13:
+        {
+            descr1: `Wheezing Triggers`,
+            text: `Tell us about any triggers that lead to wheezing.`,
+            jumpTo: 'page14',
+            type: 'multipleSelect',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "Tobacco Smoke",
+                            checked: false
+                        },
+                        {
+                            text: "Foods",
+                            checked: false
+                        },
+                        {
+                            text: "Dust",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Weather changes",
+                            checked: false
+                        },
+                        {
+                            text: "Cold air",
+                            checked: false
+                        },
+                        {
+                            text: "Strong odors",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Medications",
+                            checked: false
+                        },
+                        {
+                            text: "Animals",
+                            checked: false
+                        },
+                        {
+                            text: "Exercise",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Allergies/Hay fever",
+                            checked: false
+                        },
+                        {
+                            text: "Stress or Anxiety",
+                            checked: false
+                        },
+                        {
+                            text: "Cods/respiratory infections",
+                            checked: false
+                        }
+                    ]
+                }
+            ]
+        },
+    page14:
+        {
+            descr1: `Medications and Durable Medical Equipment`,
+            text: `Difficulty with Medications:`,
+            jumpTo: 'page15',
+            type: 'select',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "I have trouble remembering to take some of my medications",
+                            checked: false
+                        }, {
+                            text: "I have difficulty paying for some of my medications",
+                            checked: false
+                        },{
+                            text: "I am having side effects from my medications",
+                            checked: false
+                        },{
+                            text: "I need instructions on how to take my medications",
+                            checked: false
+                        }
+                    ]
+                }
+            ]
+        },
+    page15:
+        {
+            descr1: `Medications and Durable Medical Equipment`,
+            text: `Difficulty with Medications:`,
+            jumpTo: 'page16',
+            type: 'select',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "Steriods",
+                            checked: false
+                        },{
+                            text: "Antibiotics",
+                            checked: false
+                        },{
+                            text: "CPAP/BiPAP",
+                            checked: false
+                        },{
+                            text: "Oxygen",
+                            checked: false
+                        },{
+                            text: "Nebulizer",
+                            checked: false
+                        }, {
+                            text: "Rescue Inhaler",
+                            checked: false
+                        }
+                    ]
+                }
+            ]
+        },
+    page16:
+        {
+            descr1: `History of Symptoms`,
+            text: `Tell us about any symptoms you are currently having`,
+            jumpTo: 'page17',
+            type: 'multipleSelect',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "Shortness of Breath",
+                            checked: false
+                        },
+                        {
+                            text: "Coughing up Blood",
+                            checked: false
+                        },
+                        {
+                            text: "Fever/chills",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Post nasal drip",
+                            checked: false
+                        },
+                        {
+                            text: "Allergies/Hay fever",
+                            checked: false
+                        },
+                        {
+                            text: "Daytime sleepiness",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Dry cough",
+                            checked: false
+                        },
+                        {
+                            text: "Chest paints/tightness",
+                            checked: false
+                        },
+                        {
+                            text: "Night sweats",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Heart burn/acid reflux",
+                            checked: false
+                        },
+                        {
+                            text: "Gasping arousals",
+                            checked: false
+                        },
+                        {
+                            text: "Coughing up phlegm",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Wheezing",
+                            checked: false
+                        },
+                        {
+                            text: "Weight Loss",
+                            checked: false
+                        },
+                        {
+                            text: "Chocking on flood/liquid",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Stop breathing in my sleep",
+                            checked: false
+                        }
+                    ]
+                }
+            ]
+        },
+    page17:
+        {
+            descr1: `Surgical History`,
+            text: `Have you ever had surgery on any of the following`,
+            jumpTo: 'page18',
+            type: 'select',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "Head; including Eye, Nose, Mouth, or Ear",
+                            checked: false
+                        },
+                        {
+                            text: "Neck, including Throat",
+                            checked: false
+                        },
+                        {
+                            text: "Shoulder, Arm, Wrist, or Hand",
+                            checked: false
+                        },
+                        {
+                            text: "Chest, including Breast, Heart, or Lungs",
+                            checked: false
+                        },
+                        {
+                            text: "Stomach, including Intestines, Liver, or Kidneys",
+                            checked: false
+                        },
+                        {
+                            text: "Groin area, including Bladder, Prostate, or Reproductive system",
+                            checked: false
+                        },
+                        {
+                            text: "Hip, Leg, Knee, Ankle, or Foot",
+                            checked: false
+                        },
+                        {
+                            text: "Other",
+                            checked: false
+                        }
+
+                    ]
+                }
+            ]
+        },
+    page18:
+        {
+            descr1: `Health History`,
+            text: `Have you ever been diagnosed with any of the following`,
+            jumpTo: 'page19',
+            type: 'multipleSelect',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "Hypertension",
+                            checked: false
+                        }, {
+                            text: "Diabetes",
+                            checked: false
+                        }, {
+                            text: "Coronary Artery Disease",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Heart Attack ",
+                            checked: false
+                        },
+                        {
+                            text: "Stroke",
+                            checked: false
+                        },
+                        {
+                            text: "Liver Disease",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "HIV/AIDS",
+                            checked: false
+                        },
+                        {
+                            text: "Kidney Failure/Dialysis",
+                            checked: false
+                        },
+                        {
+                            text: "Congestive Heart Failure",
+                            checked: false
+                        }
+
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Arrhythmia",
+                            checked: false
+                        },
+                        {
+                            text: "Cancer",
+                            checked: false
+                        },
+                        {
+                            text: "Other",
+                            checked: false
+                        }
+
+                    ]
+                }
+            ]
+        },
+        page19: {
+            descr1: `Your Home`,
+            domain:'Environment',
+            jumpTo: 'page1',
+            type: 'mix',
+            qustions: [
+                {
+                    text: `Do you have carpeting in your home?`,
+                    answer_text: '',
+                    node:'parent',
+                    options: [
+                        {
+                            text: 'Yes'
+                        },
+                        {
+                            text: 'No'
+                        }
+                    ]
+                },
+                {
+                    text: `If yes, how often is it steam cleaned?`,
+                    cssClass:'true',
+                    node:'child',
+                    answer_text: '',
+                    options: [
+                        {
+                            text: 'Yearly'
+                        },
+                        {
+                            text: 'Seldom'
+                        },
+                        {
+                            text: 'Never'
+                        }
+                    ]
+                },
+                {
+                    text: `How would you describe your home location?`,
+                    answer_text: '',
+                    options: [
+                        {
+                            text: 'Urban'
+                        },
+                        {
+                            text: 'Suburban'
+                        },
+                        {
+                            text: 'Countryside'
+                        }
+                    ]
+                },
+                {
+                    text: `How many years have you lived at your current residence?`,
+                    answer_text: '',
+                    options: [
+                        {
+                            text: '5 or less'
+                        },
+                        {
+                            text: '6 - 10'
+                        },
+                        {
+                            text: '11 - 15'
+                        },
+                        {
+                            text: '16 or more'
+                        }
+                    ]
+                },
+                {
+                    text: `How old is your home in years?`,
+                    answer_text: '',
+                    options: [
+                        {
+                            text: '5 or less'
+                        },
+                        {
+                            text: '6 - 10'
+                        },
+                        {
+                            text: '11 - 15'
+                        },
+                        {
+                            text: '16 or more'
+                        }
+                    ]
+                },{
+                    text: `Do you have any of the following pets`,
+                    answer_text: '',
+                    options: [
+                        {
+                            text: 'Dog'
+                        },
+                        {
+                            text: 'Cat'
+                        },
+                        {
+                            text: 'Bird'
+                        },
+                        {
+                            text: 'Horse'
+                        },
+                        {
+                            text: 'Reptiles'
+                        },
+                        {
+                            text: 'Fish'
+                        },
+                        {
+                            text: 'Mouse'
+                        },
+                        {
+                            text: 'No Pets'
+                        }
+                    ]
+                }
+            ]
+        }
 };

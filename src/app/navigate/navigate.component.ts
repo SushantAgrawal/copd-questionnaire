@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { navMap } from '../app.config';
 import { AppService } from '../app.service';
+import * as _ from "lodash";
 @Component({
   selector: 'app-navigate',
   templateUrl: './navigate.component.html',
@@ -9,19 +10,49 @@ import { AppService } from '../app.service';
 })
 export class NavigateComponent implements OnInit {
   @Input() pageObject: any;
-  constructor(private router: Router, private appService: AppService) { }
+  constructor(private router: Router, private appService: AppService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
   }
   next() {
     let jumpTo;
     jumpTo = this.pageObject.jumpTo;
-    this
-    .router
-    .navigate(['generic1', jumpTo]);
+    let isFunc = _.isFunction(this.pageObject.jumpTo);
+    let copd, ashtma;
+    //debugger;
+    if (isFunc) {
+      if (this.pageObject.domain && this.pageObject.domain == "controler") {
+        this.pageObject.qustions.find(x =>
+          (copd = _.find(x.options, ['text', 'COPD'])
+          ));
+        this.pageObject.qustions.find(x =>
+          (ashtma = _.find(x.options, ['text', 'Ashtma'])
+          ));
+        jumpTo =
+          this
+            .pageObject
+            .jumpTo(copd.checked, ashtma.checked);
 
+      }
+      if (this.pageObject.domain && this.pageObject.domain == "CAT") {
+        let controler = _.find(navMap, ['domain', 'controler'])
+        controler.qustions.find(x =>
+          (ashtma = _.find(x.options, ['text', 'Ashtma'])
+          ));
+          jumpTo =
+          this
+            .pageObject
+            .jumpTo(ashtma.checked);
+      }
+
+    }
+
+    this
+      .router
+      .navigate(['generic1', jumpTo]);
   }
   previous() {
-  }  
+
+  }
 
 }

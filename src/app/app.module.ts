@@ -11,6 +11,7 @@ import { ControlComponent } from './control/control.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AngularMaterialModule} from './angular-material/angular-material.module';
 import { FormsModule } from '@angular/forms';
+import { WelcomeaComponent } from './welcomea/welcomea.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     Generic1Component,
     NavigateComponent,
-    ControlComponent
+    ControlComponent,
+    WelcomeaComponent
   ],
   imports: [
     BrowserModule,FormsModule,BrowserAnimationsModule,RouterModule.forRoot(ROUTES, {useHash: true}), HttpModule,AngularMaterialModule
