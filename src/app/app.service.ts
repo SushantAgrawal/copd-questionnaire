@@ -24,7 +24,6 @@ export class AppService {
 
   constructor( private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
     this.subject = new Subject();
-    debugger;
     let rawParams = decodeURIComponent(window.location.search)
     let urlArray = rawParams.slice(rawParams.indexOf('?') + 1).split('&');
     let urlObject = urlArray.reduce((prevValue, x, i) => {
