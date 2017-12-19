@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { navMap } from '../app.config';
+import { Location } from '@angular/common';
+import { navMapNP } from '../app.config';
 import { AppService } from '../app.service';
 import * as _ from "lodash";
 @Component({
@@ -10,7 +11,7 @@ import * as _ from "lodash";
 })
 export class NavigateComponent implements OnInit {
   @Input() pageObject: any;
-  constructor(private router: Router, private appService: AppService, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router,private location: Location, private appService: AppService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -35,7 +36,8 @@ export class NavigateComponent implements OnInit {
 
       }
       if (this.pageObject.domain && this.pageObject.domain == "CAT") {
-        let controler = _.find(navMap, ['domain', 'controler'])
+
+        let controler = _.find(navMapNP, ['domain', 'controler'])
         controler.qustions.find(x =>
           (ashtma = _.find(x.options, ['text', 'Ashtma'])
           ));
@@ -52,6 +54,9 @@ export class NavigateComponent implements OnInit {
       .navigate(['generic1', jumpTo]);
   }
   previous() {
+    this
+    .location
+    .back();
 
   }
 

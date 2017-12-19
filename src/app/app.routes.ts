@@ -19,7 +19,7 @@ export const ROUTES : Routes = [
       path: 'welcomeb',
       component: ControlComponent
     }, {
-      path: 'control',
+      path: 'welcomec',
       component: ControlComponent
     },
     {

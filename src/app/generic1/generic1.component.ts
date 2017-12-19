@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { navMap } from '../app.config';
+import { navMapNP,navMapFU } from '../app.config';
 import { AppService } from '../app.service';
 import * as _ from "lodash";
 
@@ -17,11 +17,12 @@ export class Generic1Component implements OnInit {
   child1: any;
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     private appService: AppService) {
+     let type= this.appService.get('queryParams').type || 'NP';
     activatedRoute
       .params
       .subscribe(param => {
         param.pageName && (this.pageName = param.pageName);
-        this.pageObject = navMap[this.pageName];
+        this.pageObject =  type=='NP'? navMapNP[this.pageName]:navMapFU[this.pageName];
       });
   }
   ngOnInit() {

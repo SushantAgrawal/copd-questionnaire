@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 import {AppService} from './app.service';
 import {ROUTES} from './app.routes';
 import { AppComponent } from './app.component';
@@ -23,7 +23,7 @@ import { WelcomeaComponent } from './welcomea/welcomea.component';
     WelcomeaComponent
   ],
   imports: [
-    BrowserModule,FormsModule,BrowserAnimationsModule,RouterModule.forRoot(ROUTES, {useHash: true}), HttpModule,AngularMaterialModule
+    BrowserModule,FormsModule,BrowserAnimationsModule,RouterModule.forRoot(ROUTES, {useHash: true}), HttpClientModule,AngularMaterialModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

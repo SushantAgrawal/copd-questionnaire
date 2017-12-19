@@ -1,18 +1,22 @@
 export const welcomeMap = {
-    none: 'welcomea',
-    one: 'welcomeb',
+    NP: 'welcomea',
+    FU: 'welcomeb',
     all: 'welcomec'
 };
-export const navMap = {
+export const urlMaps = {
+    questionaires: 'https://private-anon-898cfb6cb7-neuroshareapis.apiary-mock.com/neuroshare/api/all-questionnaire-responses/',
+    questionaires1: 'http://localhost:8081/listUsers'
+};
+export const navMapFU = {
     page1:
         {
             descr1: `Please Tell Us The Reason For Your Visit Today`,
-            text: `How often do you cough?`, 
-            domain:'controler',          
-            jumpTo: (copd,ashtma) => (
+            text: `How often do you cough?`,
+            domain: 'controler',
+            jumpTo: (copd, ashtma) => (
                 copd ? 'page2'
-               : (ashtma ?'page3':'page5')               
-             ),
+                    : (ashtma ? 'page3' : 'page5')
+            ),
             type: 'multipleSelect',
             qustions: [
                 {
@@ -95,10 +99,570 @@ export const navMap = {
         descr1: `Please Complete the COPD Assesment Test (CAT) below:`,
         // jumpTo: 'page3',
         jumpTo: (ashtma) => (
-            (ashtma ?'page3':'page5')               
-         ),
+            (ashtma ? 'page3' : 'page5')
+        ),
         type: 'multiple',
-        domain:'CAT', 
+        domain: 'CAT',
+        qustions: [
+            {
+                text: `How often do you cough?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Never',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'All the Time',
+                        score: `5`,
+                        checked: `false`
+                    },
+
+                ]
+
+            },
+            {
+                text: `How much phlegm do you have in your chest?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'No Phlegm',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Full of Phlegm',
+                        score: `5`,
+                        checked: `false`
+                    },
+
+                ]
+
+            },
+            {
+                text: `How tight does your chest feel?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Not at All',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Very Tight',
+                        score: `5`,
+                        checked: `false`
+                    },
+                ]
+            },
+            {
+                text: `How breathles do you get walking uphill or walking up a flight of stairs`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Not Breathless',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Very Breathless',
+                        score: `5`,
+                        checked: `false`
+                    },
+                ]
+            },
+            {
+                text: `Are you limited to doing activities at home?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Not at All',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Very Limited',
+                        score: `5`,
+                        checked: `false`
+                    },
+                ]
+            },
+            {
+                text: `Are you confident leaving your home despite your lung condition?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Not Confident',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Very Confident',
+                        score: `5`,
+                        checked: `false`
+                    },
+                ]
+            },
+            {
+                text: `How soundly do you sleep because of you lung condition`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Very Soundly',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Not Soundly',
+                        score: `5`,
+                        checked: `false`
+                    },
+                ]
+            },
+            {
+                text: `How would you rate your energy level`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Lots of Energy',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: '',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'No Energy',
+                        score: `5`,
+                        checked: `false`
+                    },
+                ]
+            }
+        ]
+    },
+    page3: {
+        descr1: `Please complete the Asthma Control Test (ACT) below:`,
+        jumpTo: 'page4',
+        type: 'multiple',
+        qustions: [
+            {
+                text: `In the past 4 weeks, how much did your asthma keep you from getting as much done at home and/or work?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'All of the time',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Most of the time',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Some of the time',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'A Little of the Time',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'None of the Time',
+                        score: `5`,
+                        checked: `false`
+                    },
+                ]
+            },
+            {
+                text: `During the past 4 weeks, how often have you had shortness of breath?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'More than once a day',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Once a day',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '3 to 6 Times a day',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Once or Twice a week',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Not at All',
+                        score: `5`,
+                        checked: `false`
+                    },
+
+                ]
+
+            },
+            {
+                text: `During the past 4 weeks, how often did your asthma symptoms 
+            (coughing, wheezing, shortness of breath, chest tightness, or pain) 
+            wake you up at night or earlier than usual in the morning`,
+                answer_text: '',
+                options: [
+                    {
+                        text: '4 or more nights a week',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '2 to 3 times a week',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Once a week',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Once or Twice',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Not at All',
+                        score: `5`,
+                        checked: `false`
+                    },
+                ]
+            }
+        ]
+    },
+    page4: {
+        descr1: `Asthma Control Test (ACT) continued`,
+        jumpTo: 'page5',
+        type: 'multiple',
+        qustions: [
+            {
+                text: `During the past 4 weeks, how often have you used 
+            your rescue inhaler or nebulizer medicine (such as albuterol)?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: '3 or more times per day',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: '1 to 2 times per day',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: '2 to 3 times per week',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Once a week or less',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Not at All',
+                        score: `5`,
+                        checked: `false`
+                    },
+                ]
+            },
+            {
+                text: `How would you rate your asthma control during the past 4 weeks`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Not Controlled',
+                        score: `1`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Poorly Controlled',
+                        score: `2`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Somewhat Controlled',
+                        score: `3`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Well Controled',
+                        score: `4`,
+                        checked: `false`
+                    },
+                    {
+                        text: 'Completely Controlled',
+                        score: `5`,
+                        checked: `false`
+                    },
+
+                ]
+            }
+        ]
+    },
+    page5: {
+        descr1: `Dyspnea test (mMRC):`,
+        jumpTo: 'page6',
+        type: 'single',
+        qustions: [
+            {
+                text: `Select the response that best describes, when you become breathless:`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'I only get breathless while strenuous exercise',
+                        score: `0`
+                    },
+                    {
+                        text: 'I get short of breath when hurrying on level ground, or walking up a slight hill',
+                        score: `1`
+                    },
+                    {
+                        text: 'On level ground, I walk slower than people of the same age because of breathlessness, or have to stop for breath when walking at my own pace',
+                        score: `2`
+                    },
+                    {
+                        text: 'I stop for breath after walking about 100 yards, or after a few minutes on level ground',
+                        score: `3`
+                    },
+                    {
+                        text: 'I am too breathless to leave the house, or I am breathless when dressing',
+                        score: `5`
+                    },
+                ]
+            }
+        ]
+    }
+}
+export const navMapNP = {
+    page1:
+        {
+            descr1: `Please Tell Us The Reason For Your Visit Today`,
+            text: `How often do you cough?`,
+            domain: 'controler',
+            jumpTo: (copd, ashtma) => (
+                copd ? 'page2'
+                    : (ashtma ? 'page3' : 'page5')
+            ),
+            type: 'multipleSelect',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "COPD",
+                            checked: false
+                        },
+                        {
+                            text: "Coughing up Blood",
+                            checked: false
+                        },
+                        {
+                            text: "Abnormal CT/Chest X-Ray",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Pulmonary Embolism",
+                            checked: false
+                        },
+                        {
+                            text: "Ashtma",
+                            checked: false
+                        },
+                        {
+                            text: "Allergies/Sinus Congestion",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Cough",
+                            checked: false
+                        },
+                        {
+                            text: "Chest Pain/Pressure",
+                            checked: false
+                        },
+                        {
+                            text: "Pneumonia/Infection",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Shortness of Breath",
+                            checked: false
+                        },
+                        {
+                            text: "Wheezing/Chest Tightness",
+                            checked: false
+                        },
+                        {
+                            text: "Low Oxygen",
+                            checked: false
+                        }
+                    ]
+                },
+                {
+                    options: [
+                        {
+                            text: "Other",
+                            checked: false
+                        }
+                    ]
+                }
+
+            ]
+
+        },
+    page2: {
+        descr1: `Please Complete the COPD Assesment Test (CAT) below:`,
+        // jumpTo: 'page3',
+        jumpTo: (ashtma) => (
+            (ashtma ? 'page3' : 'page5')
+        ),
+        type: 'multiple',
+        domain: 'CAT',
         qustions: [
             {
                 text: `How often do you cough?`,
@@ -628,12 +1192,12 @@ export const navMap = {
         descr1: `Please answer the following questions about your health over the last 12 months:`,
         jumpTo: 'page9',
         type: 'mix',
-        domain:'Clinical Awareness',            
+        domain: 'Clinical Awareness',
         qustions: [
             {
                 text: `How many exacerbations have you had over the last 12 months?`,
                 answer_text: '',
-                node:'parent',
+                node: 'parent',
                 options: [
                     {
                         text: `0`
@@ -657,7 +1221,7 @@ export const navMap = {
             {
                 text: `How many exacerbations lead you to visit the emergency or urgent care?`,
                 answer_text: '',
-                node:'child1',
+                node: 'child1',
                 options: [
                     {
                         text: `0`
@@ -681,7 +1245,7 @@ export const navMap = {
             {
                 text: `How many of the above exacerbations required hospital admission?`,
                 answer_text: '',
-                node:'child2',
+                node: 'child2',
                 options: [
                     {
                         text: `0`
@@ -787,7 +1351,7 @@ export const navMap = {
         descr1: `Your Smoking History`,
         jumpTo: 'page11',
         type: 'allComponent',
-        domain:"Smoking",
+        domain: "Smoking",
         qustions: [
             {
                 text: `Do you live, or frequently visit with someone who smokes?`,
@@ -822,7 +1386,7 @@ export const navMap = {
             {
                 text: `Do you currently use tobacco?`,
                 answer_text: '',
-                node:'parent',
+                node: 'parent',
                 options: [
                     {
                         text: 'Yes'
@@ -835,7 +1399,7 @@ export const navMap = {
             {
                 text: `If yes, what type of product do you use?`,
                 answer_text: '',
-                node:'child1',
+                node: 'child1',
                 options: [
                     {
                         text: 'Cigarettes'
@@ -860,7 +1424,7 @@ export const navMap = {
             {
                 text: `How often do you use/smoke cigaretess per day?`,
                 answer_text: '',
-                node:'Cigarettes',
+                node: 'Cigarettes',
                 options: [
                     {
                         text: 'Less than 1 pack per day'
@@ -879,7 +1443,7 @@ export const navMap = {
             {
                 text: `How offten do you use/smoke chew per day?`,
                 answer_text: '',
-                node:'Chew',
+                node: 'Chew',
                 options: [
                     {
                         text: 'Monthly'
@@ -895,7 +1459,7 @@ export const navMap = {
             {
                 text: `How offten do you use/smoke a pipe per day?`,
                 answer_text: '',
-                node:'Pipe',
+                node: 'Pipe',
                 options: [
                     {
                         text: 'Monthly'
@@ -910,7 +1474,7 @@ export const navMap = {
             },
             {
                 text: `How often do you use/smoke cigars per day?`,
-                node:'Cigar',
+                node: 'Cigar',
                 answer_text: '',
                 options: [
                     {
@@ -927,7 +1491,7 @@ export const navMap = {
             {
                 text: `How often do you use/smoke electronic cigarettes per day?`,
                 answer_text: '',
-                node:'Electronic Cigarettes',
+                node: 'Electronic Cigarettes',
                 options: [
                     {
                         text: 'Monthly'
@@ -943,7 +1507,7 @@ export const navMap = {
             {
                 text: `How often do you use/smoke snuff per day?`,
                 answer_text: '',
-                node:'Snuff',
+                node: 'Snuff',
                 options: [
                     {
                         text: 'Monthly'
@@ -991,13 +1555,13 @@ export const navMap = {
     page11: {
         descr1: `Your social history`,
         jumpTo: 'page12',
-        domain:'CA-SocialHistory',
+        domain: 'CA-SocialHistory',
         type: 'mix',
         qustions: [
             {
                 text: `Did you migrate to the U.S.A?`,
                 answer_text: '',
-                node:'parent',
+                node: 'parent',
                 options: [
                     {
                         text: 'Yes'
@@ -1010,7 +1574,7 @@ export const navMap = {
             {
                 text: `If yes, from which continent?`,
                 answer_text: '',
-                node:'child',
+                node: 'child',
                 options: [
                     {
                         text: 'Africa'
@@ -1238,10 +1802,10 @@ export const navMap = {
                         }, {
                             text: "I have difficulty paying for some of my medications",
                             checked: false
-                        },{
+                        }, {
                             text: "I am having side effects from my medications",
                             checked: false
-                        },{
+                        }, {
                             text: "I need instructions on how to take my medications",
                             checked: false
                         }
@@ -1261,16 +1825,16 @@ export const navMap = {
                         {
                             text: "Steriods",
                             checked: false
-                        },{
+                        }, {
                             text: "Antibiotics",
                             checked: false
-                        },{
+                        }, {
                             text: "CPAP/BiPAP",
                             checked: false
-                        },{
+                        }, {
                             text: "Oxygen",
                             checked: false
-                        },{
+                        }, {
                             text: "Nebulizer",
                             checked: false
                         }, {
@@ -1497,122 +2061,122 @@ export const navMap = {
                 }
             ]
         },
-        page19: {
-            descr1: `Your Home`,
-            domain:'Environment',
-            jumpTo: 'page1',
-            type: 'mix',
-            qustions: [
-                {
-                    text: `Do you have carpeting in your home?`,
-                    answer_text: '',
-                    node:'parent',
-                    options: [
-                        {
-                            text: 'Yes'
-                        },
-                        {
-                            text: 'No'
-                        }
-                    ]
-                },
-                {
-                    text: `If yes, how often is it steam cleaned?`,
-                    cssClass:'true',
-                    node:'child',
-                    answer_text: '',
-                    options: [
-                        {
-                            text: 'Yearly'
-                        },
-                        {
-                            text: 'Seldom'
-                        },
-                        {
-                            text: 'Never'
-                        }
-                    ]
-                },
-                {
-                    text: `How would you describe your home location?`,
-                    answer_text: '',
-                    options: [
-                        {
-                            text: 'Urban'
-                        },
-                        {
-                            text: 'Suburban'
-                        },
-                        {
-                            text: 'Countryside'
-                        }
-                    ]
-                },
-                {
-                    text: `How many years have you lived at your current residence?`,
-                    answer_text: '',
-                    options: [
-                        {
-                            text: '5 or less'
-                        },
-                        {
-                            text: '6 - 10'
-                        },
-                        {
-                            text: '11 - 15'
-                        },
-                        {
-                            text: '16 or more'
-                        }
-                    ]
-                },
-                {
-                    text: `How old is your home in years?`,
-                    answer_text: '',
-                    options: [
-                        {
-                            text: '5 or less'
-                        },
-                        {
-                            text: '6 - 10'
-                        },
-                        {
-                            text: '11 - 15'
-                        },
-                        {
-                            text: '16 or more'
-                        }
-                    ]
-                },{
-                    text: `Do you have any of the following pets`,
-                    answer_text: '',
-                    options: [
-                        {
-                            text: 'Dog'
-                        },
-                        {
-                            text: 'Cat'
-                        },
-                        {
-                            text: 'Bird'
-                        },
-                        {
-                            text: 'Horse'
-                        },
-                        {
-                            text: 'Reptiles'
-                        },
-                        {
-                            text: 'Fish'
-                        },
-                        {
-                            text: 'Mouse'
-                        },
-                        {
-                            text: 'No Pets'
-                        }
-                    ]
-                }
-            ]
-        }
+    page19: {
+        descr1: `Your Home`,
+        domain: 'Environment',
+        jumpTo: 'page1',
+        type: 'mix',
+        qustions: [
+            {
+                text: `Do you have carpeting in your home?`,
+                answer_text: '',
+                node: 'parent',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `If yes, how often is it steam cleaned?`,
+                cssClass: 'true',
+                node: 'child',
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yearly'
+                    },
+                    {
+                        text: 'Seldom'
+                    },
+                    {
+                        text: 'Never'
+                    }
+                ]
+            },
+            {
+                text: `How would you describe your home location?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Urban'
+                    },
+                    {
+                        text: 'Suburban'
+                    },
+                    {
+                        text: 'Countryside'
+                    }
+                ]
+            },
+            {
+                text: `How many years have you lived at your current residence?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: '5 or less'
+                    },
+                    {
+                        text: '6 - 10'
+                    },
+                    {
+                        text: '11 - 15'
+                    },
+                    {
+                        text: '16 or more'
+                    }
+                ]
+            },
+            {
+                text: `How old is your home in years?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: '5 or less'
+                    },
+                    {
+                        text: '6 - 10'
+                    },
+                    {
+                        text: '11 - 15'
+                    },
+                    {
+                        text: '16 or more'
+                    }
+                ]
+            }, {
+                text: `Do you have any of the following pets`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Dog'
+                    },
+                    {
+                        text: 'Cat'
+                    },
+                    {
+                        text: 'Bird'
+                    },
+                    {
+                        text: 'Horse'
+                    },
+                    {
+                        text: 'Reptiles'
+                    },
+                    {
+                        text: 'Fish'
+                    },
+                    {
+                        text: 'Mouse'
+                    },
+                    {
+                        text: 'No Pets'
+                    }
+                ]
+            }
+        ]
+    }
 };

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { navMap } from '../app.config';
+import { navMapFU } from '../app.config';
 import { AppService } from '../app.service';
 @Component({
   selector: 'app-control',
