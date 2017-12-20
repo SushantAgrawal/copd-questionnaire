@@ -250,7 +250,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 }
 @media only screen and (max-width: 768px) {
     .mix-toggleBtnGroup td{display: block;}
-    .toggleBtnGroup td{padding: 10px;}
+    .toggleBtnGroup td{display: block;}
+    .tblContent td{display: block;}
 }
 
 @media only screen and (max-width: 568px) {
