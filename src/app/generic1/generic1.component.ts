@@ -15,6 +15,7 @@ export class Generic1Component implements OnInit {
   selectedOption: any;
   parent: any;
   child1: any;
+  progress:any;
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     private appService: AppService) {
      let type= this.appService.get('queryParams').type || 'NP';
@@ -23,6 +24,7 @@ export class Generic1Component implements OnInit {
       .subscribe(param => {
         param.pageName && (this.pageName = param.pageName);
         this.pageObject =  type=='NP'? navMapNP[this.pageName]:navMapFU[this.pageName];
+        this.progress=this.pageObject.progress;
       });
   }
   ngOnInit() {
