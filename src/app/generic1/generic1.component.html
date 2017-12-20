@@ -1,8 +1,7 @@
 <mat-card class="mainContainer">
-  <mat-card-header>
-    <div class="example-header-image">{{pageObject.descr1}}</div>
-  </mat-card-header>
-  <mat-card-content>
+   <mat-card-content>
+     
+      <div class="example-header-image">{{pageObject.descr1}}</div>
     <div *ngIf="pageObject.type=='multipleSelect'">
       <table style="width:80%">
         <tr *ngFor="let item of pageObject.qustions ; let g = index" align="right">
