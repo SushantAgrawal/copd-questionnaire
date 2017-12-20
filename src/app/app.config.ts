@@ -11,7 +11,7 @@ export const navMapFU = {
     page1:
         {
             descr1: `Please Tell Us The Reason For Your Visit Today`,
-            text: `How often do you cough?`,
+            text: `Select all that apply`,
             domain: 'controler',
             jumpTo: (copd, ashtma) => (
                 copd ? 'page2'
@@ -95,8 +95,9 @@ export const navMapFU = {
             ]
 
         },
-    page2: {
+        page2: {
         descr1: `Please Complete the COPD Assesment Test (CAT) below:`,
+        text: `Select from 1 - 5`,
         // jumpTo: 'page3',
         jumpTo: (ashtma) => (
             (ashtma ? 'page3' : 'page5')
@@ -360,6 +361,7 @@ export const navMapFU = {
     },
     page3: {
         descr1: `Please complete the Asthma Control Test (ACT) below:`,
+        text:`Select Only 1 response for each question`,
         jumpTo: 'page4',
         type: 'multiple',
         qustions: [
@@ -464,6 +466,7 @@ export const navMapFU = {
     },
     page4: {
         descr1: `Asthma Control Test (ACT) continued`,
+        text:`Select Only 1 response for each question`,
         jumpTo: 'page5',
         type: 'multiple',
         qustions: [
@@ -535,6 +538,7 @@ export const navMapFU = {
     },
     page5: {
         descr1: `Dyspnea test (mMRC):`,
+        text:`Select only 1 Response`,
         jumpTo: 'page6',
         type: 'single',
         qustions: [
@@ -571,7 +575,8 @@ export const navMapNP = {
     page1:
         {
             descr1: `Please Tell Us The Reason For Your Visit Today`,
-            text: `How often do you cough?`,
+            progress:10,
+            text: `Select all that apply`,
             domain: 'controler',
             jumpTo: (copd, ashtma) => (
                 copd ? 'page2'
@@ -657,7 +662,8 @@ export const navMapNP = {
         },
     page2: {
         descr1: `Please Complete the COPD Assesment Test (CAT) below:`,
-        // jumpTo: 'page3',
+        progress:20,
+        text:'Select from 1 - 5',
         jumpTo: (ashtma) => (
             (ashtma ? 'page3' : 'page5')
         ),
@@ -920,6 +926,8 @@ export const navMapNP = {
     },
     page3: {
         descr1: `Please complete the Asthma Control Test (ACT) below:`,
+        progress:30,
+        text:'Select Only 1 response for each question',
         jumpTo: 'page4',
         type: 'multiple',
         qustions: [
@@ -1024,6 +1032,7 @@ export const navMapNP = {
     },
     page4: {
         descr1: `Asthma Control Test (ACT) continued`,
+        text:'Select Only 1 response for each question',
         jumpTo: 'page5',
         type: 'multiple',
         qustions: [
@@ -1095,6 +1104,7 @@ export const navMapNP = {
     },
     page5: {
         descr1: `Dyspnea test (mMRC):`,
+        text:'Select only 1 Response',
         jumpTo: 'page6',
         type: 'single',
         qustions: [
@@ -1128,6 +1138,7 @@ export const navMapNP = {
     },
     page6: {
         descr1: `The Quality of your Days`,
+        text:'Select only 1 Response',
         jumpTo: 'page7',
         type: 'single',
         qustions: [
@@ -1161,6 +1172,7 @@ export const navMapNP = {
     },
     page7: {
         descr1: `You Activity level`,
+        text:'Select only 1 Response',
         jumpTo: 'page8',
         type: 'single',
         qustions: [
@@ -1190,6 +1202,7 @@ export const navMapNP = {
     },
     page8: {
         descr1: `Please answer the following questions about your health over the last 12 months:`,
+        text:'Select Only 1 response for each question',
         jumpTo: 'page9',
         type: 'mix',
         domain: 'Clinical Awareness',
@@ -1294,6 +1307,7 @@ export const navMapNP = {
     },
     page9: {
         descr1: `Alcohol and Drug Use`,
+        text:'Select Only 1 response for each question',
         jumpTo: 'page10',
         type: 'mix',
         qustions: [
@@ -1349,6 +1363,7 @@ export const navMapNP = {
     },
     page10: {
         descr1: `Your Smoking History`,
+        text:'Select Only 1 response for each question',
         jumpTo: 'page11',
         type: 'allComponent',
         domain: "Smoking",
@@ -1554,6 +1569,7 @@ export const navMapNP = {
     },
     page11: {
         descr1: `Your social history`,
+        text:'Select Only 1 response for each question',
         jumpTo: 'page12',
         domain: 'CA-SocialHistory',
         type: 'mix',
@@ -1628,7 +1644,7 @@ export const navMapNP = {
     page12:
         {
             descr1: `Health Conditions`,
-            text: `Select all the health conditions you currently have`,
+            text: `Tell us about your pulmonary health conditions. Select all that apply.`,
             jumpTo: 'page13',
             type: 'multipleSelect',
             qustions: [
@@ -1717,7 +1733,7 @@ export const navMapNP = {
     page13:
         {
             descr1: `Wheezing Triggers`,
-            text: `Tell us about any triggers that lead to wheezing.`,
+            text: `Tell us about any triggers that lead to wheezing. Select all that apply`,
             jumpTo: 'page14',
             type: 'multipleSelect',
             qustions: [
@@ -1848,7 +1864,7 @@ export const navMapNP = {
     page16:
         {
             descr1: `History of Symptoms`,
-            text: `Tell us about any symptoms you are currently having`,
+            text: `Tell us about any symptoms you are currently having.  Select all that apply`,
             jumpTo: 'page17',
             type: 'multipleSelect',
             qustions: [
@@ -2063,6 +2079,7 @@ export const navMapNP = {
         },
     page19: {
         descr1: `Your Home`,
+        text:'',
         domain: 'Environment',
         jumpTo: 'page1',
         type: 'mix',
