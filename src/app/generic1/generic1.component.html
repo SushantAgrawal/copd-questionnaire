@@ -1,10 +1,10 @@
-<mat-card class="mainContainer">
-  <mat-card-header>
-    <div class="example-header-image">{{pageObject.descr1}}</div>
-  </mat-card-header>
-  <mat-card-content>
-    <div *ngIf="pageObject.type=='multipleSelect'">
-      <table style="width:80%">
+<div class="wrapperContianerInner">
+    <div class="pageTitle">{{pageObject.descr1}}</div>
+
+ 
+
+    <div class="tblContent" *ngIf="pageObject.type=='multipleSelect'">
+      <table>
         <tr *ngFor="let item of pageObject.qustions ; let g = index" align="right">
           <td *ngFor="let option of item.options ; let h = index">
             <label>{{option.text}}</label>
@@ -13,8 +13,8 @@
         </tr>
       </table>
     </div>
-    <div *ngIf="pageObject.type=='select'">
-      <table style="width:80%" *ngFor="let item of pageObject.qustions ; let g = index">
+    <div class="tblContent" *ngIf="pageObject.type=='select'">
+      <table *ngFor="let item of pageObject.qustions ; let g = index">
         <tr *ngFor="let option of item.options ; let h = index">
           <td align="left" style="width:50%">
             <label>{{option.text}}</label>
@@ -25,7 +25,7 @@
         </tr>
       </table>
     </div>
-    <div *ngIf="pageObject.type=='multiple'">
+    <div class="tblContent" *ngIf="pageObject.type=='multiple'">
       <table>
         <tr>
           <th></th>
@@ -48,7 +48,7 @@
         </tbody>
       </table>
     </div>
-    <div *ngIf="pageObject.type=='single'">
+    <div class="tblContent" *ngIf="pageObject.type=='single'">
       <div *ngFor="let item of pageObject.qustions ; let g = index">
         <div>
           {{item.text}}
@@ -68,7 +68,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="pageObject.type=='mix'">
+    <div class="tblContent" *ngIf="pageObject.type=='mix'">
       <table>
         <tr>
           <th></th>
@@ -90,7 +90,7 @@
         </tbody>
       </table>
     </div>
-    <div *ngIf="pageObject.type=='allComponent'">
+    <div class="tblContent" *ngIf="pageObject.type=='allComponent'">
       <table>
         <tr>
           <th></th>
@@ -112,7 +112,7 @@
         </tbody>
       </table>
     </div>
-  </mat-card-content>
+
   <app-navigate [pageObject]="pageObject"></app-navigate>
 
-</mat-card>
+</div>
