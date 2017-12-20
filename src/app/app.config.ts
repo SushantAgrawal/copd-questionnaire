@@ -1308,6 +1308,7 @@ export const navMapNP = {
     page9: {
         descr1: `Alcohol and Drug Use`,
         text:'Select Only 1 response for each question',
+        progress:60,
         jumpTo: 'page10',
         type: 'mix',
         qustions: [

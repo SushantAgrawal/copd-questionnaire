@@ -7,12 +7,6 @@
 
 </section>
 
-    <!-- <section class="example-section">
-        <mat-progress-bar            
-            color="primary"
-            [value]="progress">
-        </mat-progress-bar>
-      </section> -->
     <div class="pageTitle">{{pageObject.descr1}}</div>
     <div class="tblContent" *ngIf="pageObject.type=='multipleSelect'">
       <table>
@@ -59,12 +53,14 @@
         </tbody>
       </table>
     </div>
-    <div class="tblContent" *ngIf="pageObject.type=='single'">
+    <div *ngIf="pageObject.type=='single'">
       <div *ngFor="let item of pageObject.qustions ; let g = index">
-        <div>
+
+        <div class="subHeading">
           {{item.text}}
         </div>
-        <div>
+
+        <div class="tblContent">
           <mat-radio-group [(ngModel)]="item.answer_text">
             <table>
               <tr *ngFor="let option of item.options ; let h = index">
@@ -79,13 +75,9 @@
         </div>
       </div>
     </div>
-    <div class="tblContent" *ngIf="pageObject.type=='mix'">
+    <div class="mix-toggleBtnGroup" *ngIf="pageObject.type=='mix'">
       <table>
-        <tr>
-          <th></th>
-          <th></th>
-        </tr>
-        <tbody>
+               <tbody>
           <tr *ngFor="let item of pageObject.qustions ; let g = index" [attr.id]="g" [ngClass]="getCSSClasses(g)">
             <td>{{item.text}}</td>
             <td>
@@ -101,18 +93,14 @@
         </tbody>
       </table>
     </div>
-    <div class="tblContent" *ngIf="pageObject.type=='allComponent'">
+    <div class="toggleBtnGroup" *ngIf="pageObject.type=='allComponent'">
       <table>
-        <tr>
-          <th></th>
-          <th></th>
-        </tr>
-        <tbody>
+      <tbody>
           <tr *ngFor="let item of pageObject.qustions ; let g = index" [attr.id]="g" [ngClass]="getCSSClasses(g)">
             <td>{{item.text}}</td>
             <td>
-              <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">
-                <div *ngFor="let option of item.options ; let h = index">
+              <mat-button-toggle-group [(ngModel)]="item.answer_text">
+                <div class="btn-toggle" *ngFor="let option of item.options ; let h = index">
                   <mat-button-toggle [name]="g" [value]="option.text">{{option.text}}
                   </mat-button-toggle>
                   <br/>
