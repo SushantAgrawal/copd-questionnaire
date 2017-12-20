@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { navMapNP,navMapFU } from '../app.config';
 import { AppService } from '../app.service';
 import * as _ from "lodash";
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-generic1',
@@ -16,8 +17,9 @@ export class Generic1Component implements OnInit {
   parent: any;
   child1: any;
   progress:any;
+  value:any;
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
-    private appService: AppService) {
+    private appService: AppService,private _sanitizer: DomSanitizer) {
      let type= this.appService.get('queryParams').type || 'NP';
     activatedRoute
       .params
@@ -25,6 +27,8 @@ export class Generic1Component implements OnInit {
         param.pageName && (this.pageName = param.pageName);
         this.pageObject =  type=='NP'? navMapNP[this.pageName]:navMapFU[this.pageName];
         this.progress=this.pageObject.progress;
+        
+        this.value= this._sanitizer.bypassSecurityTrustStyle(`width:${this.progress}%`);
       });
   }
   ngOnInit() {

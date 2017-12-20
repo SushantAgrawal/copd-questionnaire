@@ -76,7 +76,11 @@ body{
     font-size: 16pt;
 }
 
-.pageTitle{ background-color:#5b9bd5; color: #efefef; padding: 10px; text-align: center; font-size: 16pt;}
+.pageTitle{ background-color:#5b9bd5; color: #efefef; padding: 10px; text-align: center; font-size: 16pt; border: solid 1px #4984ba;
+-webkit-border-radius: 2px; 
+-moz-border-radius: 2px; 
+border-radius: 2px;
+}
 
 .navigate-sec{
     display: flex;
@@ -104,6 +108,53 @@ body{
 .tblContent tr:nth-child(even){
     background-color: #deebf7;
   }
+
+.progressbar{
+    background-color: #b2b2b2;
+    -webkit-border-radius: 10px; 
+    -moz-border-radius: 10px; 
+    border-radius: 10px;
+    height: 20px;
+    width: 60%;
+    margin: 20px auto;
+    position: relative;
+    .progressTxt{
+        font-size: 9pt;
+        position: absolute; 
+        width: 17%;
+        right: 0px;
+        line-height: 20px;
+        white-space: nowrap;
+        text-align: center;
+
+    }
+    .barCont{
+        position: absolute; 
+        width: 83%;
+        left: 0px;
+        height: 16px;
+        padding: 2px;
+        background-color: #e0e0e0;
+        -webkit-border-radius: 10px; 
+        -moz-border-radius: 10px; 
+        border-radius: 10px;
+        -webkit-box-shadow:inset 1px 1px 1px 1px #737373;
+        box-shadow:inset 1px 1px 1px 1px #737373;
+        .blueBar{
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,53cbf1+40,05abe0+100;Blue+3D+%23+16 */
+background: #87e0fd; /* Old browsers */
+background: -moz-linear-gradient(top, #87e0fd 0%, #53cbf1 40%, #05abe0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); /* IE6-9 */
+            -webkit-border-radius: 10px; 
+            -moz-border-radius: 10px; 
+            border-radius: 10px;
+            height: 16px;
+        }
+    }
+}
+
 
 @media only screen and (max-width: 568px) {
     .contentArea{ display: block;}
