@@ -182,7 +182,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 }
 
 .toggleBtnGroup .mat-button-toggle{
-    border:solid 1px #b8b7b7; margin-right: 5px; padding: 2px; background-color: #fff;
+    border:solid 1px #b8b7b7; margin-right: 5px; padding: 2px; background-color: #e5e5e5;
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
     color: #000000;
 
@@ -217,7 +217,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 }
 
 .mix-toggleBtnGroup .mat-button-toggle{
-    border:solid 1px #b8b7b7; margin-right: 5px; padding: 2px; background-color: #fff;
+    border:solid 1px #b8b7b7; margin-right: 5px; padding: 2px; background-color: #e5e5e5;
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
     color: #000000;
 
@@ -235,6 +235,67 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
     background-color: #deebf7;
   }
 
+
+
+
+  .toggleBtnGroupPage2{
+    margin-bottom: 60px;
+    border-top: solid 2px #5b9bd5;
+    border-bottom: solid 2px #5b9bd5;
+}
+.toggleBtnGroupPage2 table{width: 100%;  border-collapse: collapse;}
+.toggleBtnGroupPage2 td{padding: 10px;}
+.toggleBtnGroupPage2 td:nth-child(1){
+    width: 60%;
+}
+.toggleBtnGroupPage2 .mat-button-toggle-group{
+    box-shadow: 0 0px 0px 0px rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,.0)!important;
+    white-space:normal!important; 
+}
+
+.toggleBtnGroupPage2 .mat-button-toggle{
+    border:solid 1px #b8b7b7; margin-right: 15px; padding: 2px; background-color: #e5e5e5;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    color: #000000;
+
+}
+.toggleBtnGroupPage2 .mat-button-toggle-label-content{
+    font-size: 11pt;
+    line-height: 31px;
+}
+
+.toggleBtnGroupPage2 .mat-button-toggle-checked{
+    background-color: #5b9bd5;
+    color: #fff!important;
+}
+.toggleBtnGroupPage2 tr:nth-child(even){
+    background-color: #deebf7;
+  }
+  .toggleBtnGroupPage2 .checkBoxAssesment{ position: relative; padding-bottom: 25px;}
+  .toggleBtnGroupPage2 .txtAssesment{font-size: 10pt; position: absolute;}
+ .toggleBtnGroupPage2 .checkBoxAssesment:nth-child(1) .txtAssesment{
+        width: 139px;
+        bottom: 0px;
+        left: 0px;
+        line-height: 16pt;
+
+    }
+    .toggleBtnGroupPage2 .checkBoxAssesment:nth-child(5) .txtAssesment{
+        width: 139px;
+        bottom: 0px;
+        right: 15px;
+        text-align: right;
+    }
+    
+
+  
+
+.contentAlign90x10 td:nth-child(1){
+    width: 90%;  
+}
+
+
+
 @media only screen and (max-width: 1000px) {
     .navigate-sec{
         display: flex;
@@ -251,7 +312,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 @media only screen and (max-width: 768px) {
     .mix-toggleBtnGroup td{display: block;}
     .toggleBtnGroup td{display: block;}
-    .tblContent td{display: block;}
+    .toggleBtnGroupPage2 td{display: block;}
+    .progressbar{
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 568px) {
@@ -263,12 +327,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
         margin-bottom: 20px;
         
     }
-    .progressbar{
-        width: 90%;
+    .multipleSelectCont td{
+    display: block;
+        
     }
        
     .contentArea .alignRight{
         text-align: left;
     }
+    
+    .mat-button-toggle-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-end;
+    }
+    .progressbar .progressTxt{
+        width: 25%;
+    }
+    .progressbar .barCont{
+        width: 75%;
+    }
+    .toggleBtnGroupPage2 .mat-button-toggle{
+       margin-right: 10px;
+    }
+
 }
 

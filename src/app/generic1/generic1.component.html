@@ -8,7 +8,7 @@
 </section>
 
     <div class="pageTitle">{{pageObject.descr1}}</div>
-    <div class="tblContent" *ngIf="pageObject.type=='multipleSelect'">
+    <div class="tblContent multipleSelectCont" *ngIf="pageObject.type=='multipleSelect'">
       <table>
         <tr *ngFor="let item of pageObject.qustions ; let g = index" align="right">
           <td *ngFor="let option of item.options ; let h = index">
@@ -18,34 +18,30 @@
         </tr>
       </table>
     </div>
-    <div class="tblContent" *ngIf="pageObject.type=='select'">
+    <div class="tblContent contentAlign90x10" *ngIf="pageObject.type=='select'">
       <table *ngFor="let item of pageObject.qustions ; let g = index">
         <tr *ngFor="let option of item.options ; let h = index">
-          <td align="left" style="width:50%">
+          <td align="left">
             <label>{{option.text}}</label>
           </td>
-          <td align="left" style="width:50%">
+          <td align="left">
             <mat-checkbox [(ngModel)]="option.checked" [value]="option.text"></mat-checkbox>
           </td>
         </tr>
       </table>
     </div>
-    <div class="tblContent" *ngIf="pageObject.type=='multiple'">
+    <div class="tblContent toggleBtnGroupPage2" *ngIf="pageObject.type=='multiple'">
       <table>
-        <tr>
-          <th></th>
-          <th></th>
-        </tr>
         <tbody>
           <tr *ngFor="let item of pageObject.qustions ; let g = index">
             <td>{{item.text}}</td>
             <td>
               <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">
-                <div *ngFor="let option of item.options ; let h = index">
+                <div class="checkBoxAssesment" *ngFor="let option of item.options ; let h = index">
                   <mat-button-toggle [value]="option.score">{{option.score}}
                   </mat-button-toggle>
                   <br/>
-                  <div>{{option.text}}</div>
+                  <div class="txtAssesment">{{option.text}}</div>
                 </div>
               </mat-button-toggle-group>
             </td>
@@ -60,7 +56,7 @@
           {{item.text}}
         </div>
 
-        <div class="tblContent">
+        <div class="tblContent contentAlign90x10">
           <mat-radio-group [(ngModel)]="item.answer_text">
             <table>
               <tr *ngFor="let option of item.options ; let h = index">
