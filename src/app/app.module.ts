@@ -23,7 +23,7 @@ import { WelcomeaComponent } from './welcomea/welcomea.component';
     WelcomeaComponent
   ],
   imports: [
-    BrowserModule,FormsModule,BrowserAnimationsModule,RouterModule.forRoot(ROUTES, {useHash: true}), HttpClientModule,AngularMaterialModule
+    BrowserModule,FormsModule,BrowserAnimationsModule,RouterModule.forRoot(ROUTES), HttpClientModule,AngularMaterialModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
