@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { navMapNP,navMapFU } from '../app.config';
+import { navMapNP, navMapFU } from '../app.config';
 import { AppService } from '../app.service';
 import * as _ from "lodash";
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
@@ -16,20 +16,21 @@ export class Generic1Component implements OnInit {
   selectedOption: any;
   parent: any;
   child1: any;
-  progress:any;
-  value:any;
-  years:any;
+  progress: any;
+  value: any;
+  years: any;
+  month: any  =  [['January', '01'],  ['February', '02'],  ['March', '03'],  ['April', '04'],  ['May', '05'],  ['June', '06'],  ['July', '07'],  ['August', '08'],  ['September', '09'],  ['October', '10'],  ['November', '11'],  ['December', '12']];
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
-    private appService: AppService,private _sanitizer: DomSanitizer) {
-     let type= this.appService.get('queryParams').type || 'NP';
+    private appService: AppService, private _sanitizer: DomSanitizer) {
+    let type = this.appService.get('queryParams').type || 'NP';
     activatedRoute
       .params
       .subscribe(param => {
         param.pageName && (this.pageName = param.pageName);
-        this.pageObject =  type=='NP'? navMapNP[this.pageName]:navMapFU[this.pageName];
-        this.progress=this.pageObject.progress;        
-        this.value= this._sanitizer.bypassSecurityTrustStyle(`width:${this.progress}%`);
-       this.years= Array.from(new Array(100), (val, index) => (new Date()).getFullYear() - index) 
+        this.pageObject = type == 'NP' ? navMapNP[this.pageName] : navMapFU[this.pageName];
+        this.progress = this.pageObject.progress;
+        this.value = this._sanitizer.bypassSecurityTrustStyle(`width:${this.progress}%`);
+        this.years = Array.from(new  Array(100), (val,  index)  =>  (new  Date()).getFullYear()  -  index)
       });
   }
   ngOnInit() {

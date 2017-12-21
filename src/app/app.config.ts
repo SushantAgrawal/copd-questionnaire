@@ -10,6 +10,7 @@ export const navMapFU = {
     page1:
         {
             descr1: `Please Tell Us The Reason For Your Visit Today`,
+            progress:10,
             text: `Select all that apply`,
             domain: 'controler',
             jumpTo: (copd, ashtma) => (
@@ -94,14 +95,14 @@ export const navMapFU = {
             ]
 
         },
-        page2: {
+    page2: {
         descr1: `Please Complete the COPD Assesment Test (CAT) below:`,
-        text: `Select from 1 - 5`,
-        // jumpTo: 'page3',
+        progress:20,
+        text:'Select from 1 - 5',
         jumpTo: (ashtma) => (
             (ashtma ? 'page3' : 'page5')
         ),
-        type: 'multiple',
+        type: 'copd',
         domain: 'CAT',
         qustions: [
             {
@@ -360,7 +361,8 @@ export const navMapFU = {
     },
     page3: {
         descr1: `Please complete the Asthma Control Test (ACT) below:`,
-        text:`Select Only 1 response for each question`,
+        progress:30,
+        text:'Select Only 1 response for each question',
         jumpTo: 'page4',
         type: 'multiple',
         qustions: [
@@ -430,8 +432,8 @@ export const navMapFU = {
             },
             {
                 text: `During the past 4 weeks, how often did your asthma symptoms 
-            (coughing, wheezing, shortness of breath, chest tightness, or pain) 
-            wake you up at night or earlier than usual in the morning`,
+                (coughing, wheezing, shortness of breath, chest tightness, or pain) 
+                wake you up at night or earlier than usual in the morning`,
                 answer_text: '',
                 options: [
                     {
@@ -465,13 +467,14 @@ export const navMapFU = {
     },
     page4: {
         descr1: `Asthma Control Test (ACT) continued`,
-        text:`Select Only 1 response for each question`,
+        text:'Select Only 1 response for each question',
+        progress:30,
         jumpTo: 'page5',
         type: 'multiple',
         qustions: [
             {
                 text: `During the past 4 weeks, how often have you used 
-            your rescue inhaler or nebulizer medicine (such as albuterol)?`,
+                your rescue inhaler or nebulizer medicine (such as albuterol)?`,
                 answer_text: '',
                 options: [
                     {
@@ -537,7 +540,8 @@ export const navMapFU = {
     },
     page5: {
         descr1: `Dyspnea test (mMRC):`,
-        text:`Select only 1 Response`,
+        text:'Select only 1 Response',
+        progress:40,
         jumpTo: 'page6',
         type: 'single',
         qustions: [
@@ -568,7 +572,505 @@ export const navMapFU = {
                 ]
             }
         ]
-    }
+    },
+    page6: {
+        descr1: `The Quality of your Days`,
+        progress:40,
+        text:'Select only 1 Response',
+        jumpTo: 'page7',
+        type: 'single',
+        qustions: [
+            {
+                text: `Select the response that best describes the quality of your days:`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'I have all good days',
+                        score: ``
+                    },
+                    {
+                        text: 'I have more than good days than bad days',
+                        score: ``
+                    },
+                    {
+                        text: 'I have about an equali number of good dayts and bad days',
+                        score: ``
+                    },
+                    {
+                        text: 'I have more bad days than good days',
+                        score: ``
+                    },
+                    {
+                        text: 'I have all bad days',
+                        score: ``
+                    },
+                ]
+            }
+        ]
+    },
+    page7: {
+        descr1: `You Activity level`,
+        progress:40,
+        text:'Select only 1 Response',
+        jumpTo: 'page8',
+        type: 'single',
+        qustions: [
+            {
+                text: `Select the response that best describes your activity level:`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'I get exercise most days',
+                        score: ``
+                    },
+                    {
+                        text: 'I get exercies on some days',
+                        score: ``
+                    },
+                    {
+                        text: 'I get exercise occaionally',
+                        score: ``
+                    },
+                    {
+                        text: 'I never get execercise',
+                        score: ``
+                    }
+                ]
+            }
+        ]
+    },
+    page8: {
+        descr1: `Please answer the following questions about your health over the last 12 months:`,
+        text:'Select Only 1 response for each question',
+        progress:50,
+        jumpTo: 'page9',
+        type: 'mix',
+        domain: 'Clinical Awareness',
+        qustions: [
+            {
+                text: `How many exacerbations have you had over the last 12 months?`,
+                answer_text: '',
+                node: 'parent',
+                options: [
+                    {
+                        text: `0`
+                    },
+                    {
+                        text: `1`
+                    }, {
+                        text: `2`
+                    }, {
+                        text: `3`
+                    }, {
+                        text: `4`
+                    }, {
+                        text: `5`
+                    },
+                    {
+                        text: `+`
+                    }
+                ]
+            },
+            {
+                text: `How many exacerbations lead you to visit the emergency or urgent care?`,
+                answer_text: '',
+                node: 'child1',
+                options: [
+                    {
+                        text: `0`
+                    },
+                    {
+                        text: `1`
+                    }, {
+                        text: `2`
+                    }, {
+                        text: `3`
+                    }, {
+                        text: `4`
+                    }, {
+                        text: `5`
+                    },
+                    {
+                        text: `+`
+                    }
+                ]
+            },
+            {
+                text: `How many of the above exacerbations required hospital admission?`,
+                answer_text: '',
+                node: 'child2',
+                options: [
+                    {
+                        text: `0`
+                    },
+                    {
+                        text: `1`
+                    }, {
+                        text: `2`
+                    }, {
+                        text: `3`
+                    }, {
+                        text: `4`
+                    }, {
+                        text: `5`
+                    },
+                    {
+                        text: `+`
+                    }
+                ]
+            },
+            {
+                text: `Were you prescribed antibiotics by another provider?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: `Yes`
+                    },
+                    {
+                        text: `No`
+                    }
+                ]
+            },
+            {
+                text: `Were you prescribed Prednisone (or similar rescue inhaler) by another provider?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: `Yes`
+                    },
+                    {
+                        text: `No`
+                    }
+                ]
+            }
+        ]
+    },
+    page9: {
+        descr1: `Alcohol and Drug Use`,
+        text:'Select Only 1 response for each question',
+        progress:55,
+        jumpTo: 'page10',
+        type: 'mix',
+        qustions: [
+            {
+                text: `Do you drink alcohol?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `Do you smoke marijuana?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `Do you use recreational drugs?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `Do you have a dependency on any substance?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+        ]
+    },
+    page10: {
+        descr1: `Your Smoking History`,
+        text:'Select Only 1 response for each question',
+        progress:60,
+        jumpTo: 'page11',
+        type: 'allComponent',
+        domain: "Smoking",
+        qustions: [
+            {
+                text: `Do you live, or frequently visit with someone who smokes?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `Have you recently been exposed to:`,
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Non-Tobacco Smoke'
+                    },
+                    {
+                        text: 'Dust'
+                    },
+                    {
+                        text: 'Fumes'
+                    },
+                    {
+                        text: 'Chemicals'
+                    }
+                ]
+            },
+            {
+                text: `Do you currently use tobacco?`,
+                answer_text: '',
+                node: 'parent',
+                options: [
+                    {
+                        text: 'Yes'
+                    },
+                    {
+                        text: 'No'
+                    }
+                ]
+            },
+            {
+                text: `If yes, what type of product do you use?`,
+                answer_text: '',
+                node: 'child1',
+                options: [
+                    {
+                        text: 'Cigarettes'
+                    },
+                    {
+                        text: 'Chew'
+                    },
+                    {
+                        text: 'Pipe'
+                    },
+                    {
+                        text: 'Cigar'
+                    },
+                    {
+                        text: 'Electronic Cigarettes'
+                    },
+                    {
+                        text: 'Snuff'
+                    }
+                ]
+            },
+            {
+                text: `How often do you use/smoke cigaretess per day?`,
+                answer_text: '',
+                node: 'Cigarettes',
+                options: [
+                    {
+                        text: 'Less than 1 pack per day'
+                    },
+                    {
+                        text: '1 pack per day'
+                    },
+                    {
+                        text: '2 packs per day'
+                    },
+                    {
+                        text: '3 or more packs per day'
+                    }
+                ]
+            },
+            {
+                text: `How offten do you use/smoke chew per day?`,
+                answer_text: '',
+                node: 'Chew',
+                options: [
+                    {
+                        text: 'Monthly'
+                    },
+                    {
+                        text: 'Weekly'
+                    },
+                    {
+                        text: 'Daily'
+                    }
+                ]
+            },
+            {
+                text: `How offten do you use/smoke a pipe per day?`,
+                answer_text: '',
+                node: 'Pipe',
+                options: [
+                    {
+                        text: 'Monthly'
+                    },
+                    {
+                        text: 'Weekly'
+                    },
+                    {
+                        text: 'Daily'
+                    },
+                ]
+            },
+            {
+                text: `How often do you use/smoke cigars per day?`,
+                node: 'Cigar',
+                answer_text: '',
+                options: [
+                    {
+                        text: 'Monthly'
+                    },
+                    {
+                        text: 'Weekly'
+                    },
+                    {
+                        text: 'Daily'
+                    }
+                ]
+            },
+            {
+                text: `How often do you use/smoke electronic cigarettes per day?`,
+                answer_text: '',
+                node: 'Electronic Cigarettes',
+                options: [
+                    {
+                        text: 'Monthly'
+                    },
+                    {
+                        text: 'Weekly'
+                    },
+                    {
+                        text: 'Daily'
+                    }
+                ]
+            },
+            {
+                text: `How often do you use/smoke snuff per day?`,
+                answer_text: '',
+                node: 'Snuff',
+                options: [
+                    {
+                        text: 'Monthly'
+                    },
+                    {
+                        text: 'Weekly'
+                    },
+                    {
+                        text: 'Daily'
+                    }
+                ]
+            },
+            {
+                text: `How many years have you used tobacco products?`,
+                answer_text: '',
+                options: [
+                    {
+                        text: '5 or less'
+                    },
+                    {
+                        text: '6 to 10'
+                    },
+                    {
+                        text: '11 to 15'
+                    },
+                    {
+                        text: '16 or more'
+                    }
+                ]
+            },
+            {
+                text: `Please select the date or select number of years you have quit using tobacco products?`,
+                answer_text: '',
+                mm_Answer_text:'',
+                controlType:'year',
+                options: [
+                    {
+                        text: 'Month and year selector'
+                    },
+                    {
+                        text: 'Year selector'
+                    }
+                ]
+            }
+        ]
+    },
+    page11:
+        {
+            descr1: `Medications and Durable Medical Equipment`,
+            text: `Difficulty with Medications:`,
+            progress:80,
+            jumpTo: 'page12',
+            type: 'select',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "I have trouble remembering to take some of my medications",
+                            checked: false
+                        }, {
+                            text: "I have difficulty paying for some of my medications",
+                            checked: false
+                        }, {
+                            text: "I am having side effects from my medications",
+                            checked: false
+                        }, {
+                            text: "I need instructions on how to take my medications",
+                            checked: false
+                        }
+                    ]
+                }
+            ]
+        },
+    page12:
+        {
+            descr1: `Medications and Durable Medical Equipment`,
+            text: `Difficulty with Medications:`,
+            progress:80,
+            jumpTo: 'page1',
+            type: 'select',
+            qustions: [
+                {
+                    options: [
+                        {
+                            text: "Steriods",
+                            checked: false
+                        }, {
+                            text: "Antibiotics",
+                            checked: false
+                        }, {
+                            text: "CPAP/BiPAP",
+                            checked: false
+                        }, {
+                            text: "Oxygen",
+                            checked: false
+                        }, {
+                            text: "Nebulizer",
+                            checked: false
+                        }, {
+                            text: "Rescue Inhaler",
+                            checked: false
+                        }
+                    ]
+                }
+            ]
+        }
 }
 export const navMapNP = {
     page1:
@@ -1562,6 +2064,7 @@ export const navMapNP = {
             {
                 text: `Please select the date or select number of years you have quit using tobacco products?`,
                 answer_text: '',
+                mm_Answer_text:'',
                 controlType:'year',
                 options: [
                     {

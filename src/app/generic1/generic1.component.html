@@ -124,7 +124,14 @@
               </mat-button-toggle-group>
               <ng-template #yearControl>
                   <mat-form-field>
-                      <mat-select placeholder="Select"  [(ngModel)]="item.answer_text">
+                      <mat-select placeholder="Month"  [(ngModel)]="item.mm_Answer_text">
+                        <mat-option *ngFor="let mm of month" [value]="mm[1]">
+                          {{ mm[0] }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  <mat-form-field>
+                      <mat-select placeholder="Year"  [(ngModel)]="item.answer_text">
                         <mat-option *ngFor="let year of years" [value]="year">
                           {{ year }}
                         </mat-option>
