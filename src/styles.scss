@@ -246,7 +246,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 .toggleBtnGroupPage2 table{width: 100%;  border-collapse: collapse;}
 .toggleBtnGroupPage2 td{padding: 10px;}
 .toggleBtnGroupPage2 td:nth-child(1){
-    width: 60%;
+    width: 50%;
 }
 .toggleBtnGroupPage2 .mat-button-toggle-group{
     box-shadow: 0 0px 0px 0px rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,.0)!important;
@@ -254,7 +254,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 }
 
 .toggleBtnGroupPage2 .mat-button-toggle{
-    border:solid 1px #b8b7b7; margin-right: 15px; padding: 2px; background-color: #e5e5e5;
+    border:solid 1px #b8b7b7; margin-right: 45px; padding: 2px; background-color: #e5e5e5;
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
     color: #000000;
 
@@ -271,20 +271,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 .toggleBtnGroupPage2 tr:nth-child(even){
     background-color: #deebf7;
   }
-  .toggleBtnGroupPage2 .checkBoxAssesment{ position: relative; padding-bottom: 25px;}
-  .toggleBtnGroupPage2 .txtAssesment{font-size: 10pt; position: absolute;}
+  .toggleBtnGroupPage2 .checkBoxAssesment{ position: relative; padding-bottom: 40px;}
+  .toggleBtnGroupPage2 .txtAssesment{font-size: 10pt; position: absolute;  line-height: 12pt;  width: 80px; bottom: 0px;}
  .toggleBtnGroupPage2 .checkBoxAssesment:nth-child(1) .txtAssesment{
-        width: 139px;
-        bottom: 0px;
         left: 0px;
-        line-height: 16pt;
-
     }
     .toggleBtnGroupPage2 .checkBoxAssesment:nth-child(5) .txtAssesment{
-        width: 139px;
-        bottom: 0px;
         right: 15px;
-        text-align: right;
     }
     
 
@@ -313,6 +306,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
     .mix-toggleBtnGroup td{display: block;}
     .toggleBtnGroup td{display: block;}
     .toggleBtnGroupPage2 td{display: block;}
+    .toggleBtnGroupPage2 td:nth-child(1){
+        width: 100%;
+    }
     .progressbar{
         width: 100%;
     }
@@ -352,8 +348,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
         width: 75%;
     }
     .toggleBtnGroupPage2 .mat-button-toggle{
-       margin-right: 10px;
+       margin-right:40px;
     }
+    .toggleBtnGroupPage2 .checkBoxAssesment{
+        margin-bottom: 20px;
+    }
+    
 
 }
 
