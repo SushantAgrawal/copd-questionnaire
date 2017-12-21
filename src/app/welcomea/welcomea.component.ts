@@ -19,7 +19,7 @@ export class WelcomeaComponent implements OnInit {
    }
  
    next(){
-    // this.router.navigate(['generic1','q1']);
+    
     this.router.navigate(['generic1','page1']);
    }
 }

@@ -18,6 +18,7 @@ export class Generic1Component implements OnInit {
   child1: any;
   progress:any;
   value:any;
+  years:any;
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     private appService: AppService,private _sanitizer: DomSanitizer) {
      let type= this.appService.get('queryParams').type || 'NP';
@@ -26,9 +27,9 @@ export class Generic1Component implements OnInit {
       .subscribe(param => {
         param.pageName && (this.pageName = param.pageName);
         this.pageObject =  type=='NP'? navMapNP[this.pageName]:navMapFU[this.pageName];
-        this.progress=this.pageObject.progress;
-        
+        this.progress=this.pageObject.progress;        
         this.value= this._sanitizer.bypassSecurityTrustStyle(`width:${this.progress}%`);
+       this.years= Array.from(new Array(100), (val, index) => (new Date()).getFullYear() - index) 
       });
   }
   ngOnInit() {

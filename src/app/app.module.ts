@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AngularMaterialModule} from './angular-material/angular-material.module';
 import { FormsModule } from '@angular/forms';
 import { WelcomeaComponent } from './welcomea/welcomea.component';
+import { WelcomebComponent } from './welcomeb/welcomeb.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { WelcomeaComponent } from './welcomea/welcomea.component';
     Generic1Component,
     NavigateComponent,
     ControlComponent,
-    WelcomeaComponent
+    WelcomeaComponent,
+    WelcomebComponent
   ],
   imports: [
     BrowserModule,FormsModule,BrowserAnimationsModule,RouterModule.forRoot(ROUTES), HttpClientModule,AngularMaterialModule

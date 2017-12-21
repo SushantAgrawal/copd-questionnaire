@@ -122,7 +122,13 @@
                 </div>
               </mat-button-toggle-group>
               <ng-template #yearControl>
-                  If isValid is false
+                  <mat-form-field>
+                      <mat-select placeholder="Select"  [(ngModel)]="item.answer_text">
+                        <mat-option *ngFor="let year of years" [value]="year">
+                          {{ year }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
               </ng-template>
               
             </td>
