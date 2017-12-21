@@ -286,7 +286,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 .contentAlign90x10 td:nth-child(1){
     width: 95%;  
 }
-
+.dashbar{ width: 48px; height: 2px; background-color: #b2b2b2; position: absolute; right: 0px;top: 13px;}
+.checkBoxAssesment:nth-child(5) .dashbar{
+    display: none;
+}
 
 
 @media only screen and (max-width: 1000px) {
