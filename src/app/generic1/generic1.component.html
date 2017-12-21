@@ -30,6 +30,25 @@
         </tr>
       </table>
     </div>
+    <div class="tblContent toggleBtnGroupPage2" *ngIf="pageObject.type=='copd'">
+        <table>
+          <tbody>
+            <tr *ngFor="let item of pageObject.qustions ; let g = index">
+              <td>{{item.text}}</td>
+              <td>
+                <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">
+                  <div class="checkBoxAssesment" *ngFor="let option of item.options ; let h = index">
+                    <mat-button-toggle [value]="option.score">{{option.score}}
+                    </mat-button-toggle>
+                    <br/>
+                    <div class="txtAssesment">{{option.text}}</div>
+                  </div>
+                </mat-button-toggle-group>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     <div class="tblContent toggleBtnGroupPage2" *ngIf="pageObject.type=='multiple'">
       <table>
         <tbody>
@@ -95,13 +114,17 @@
           <tr *ngFor="let item of pageObject.qustions ; let g = index" [attr.id]="g" [ngClass]="getCSSClasses(g)">
             <td>{{item.text}}</td>
             <td>
-              <mat-button-toggle-group [(ngModel)]="item.answer_text">
+              <mat-button-toggle-group [(ngModel)]="item.answer_text" *ngIf ="!item.controlType; else yearControl">
                 <div class="btn-toggle" *ngFor="let option of item.options ; let h = index">
                   <mat-button-toggle [name]="g" [value]="option.text">{{option.text}}
                   </mat-button-toggle>
                   <br/>
                 </div>
               </mat-button-toggle-group>
+              <ng-template #yearControl>
+                  If isValid is false
+              </ng-template>
+              
             </td>
           </tr>
         </tbody>

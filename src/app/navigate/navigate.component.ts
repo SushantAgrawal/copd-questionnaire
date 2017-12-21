@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { navMapNP } from '../app.config';
+import { navMapNP, navMapFU } from '../app.config';
 import { AppService } from '../app.service';
 import * as _ from "lodash";
 @Component({
@@ -11,7 +11,8 @@ import * as _ from "lodash";
 })
 export class NavigateComponent implements OnInit {
   @Input() pageObject: any;
-  constructor(private router: Router,private location: Location, private appService: AppService, private activatedRoute: ActivatedRoute) { }
+   navMap:any;
+  constructor(private router: Router, private location: Location, private appService: AppService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -20,6 +21,7 @@ export class NavigateComponent implements OnInit {
     jumpTo = this.pageObject.jumpTo;
     let isFunc = _.isFunction(this.pageObject.jumpTo);
     let copd, ashtma;
+    
     //debugger;
     if (isFunc) {
       if (this.pageObject.domain && this.pageObject.domain == "controler") {
@@ -36,27 +38,35 @@ export class NavigateComponent implements OnInit {
 
       }
       if (this.pageObject.domain && this.pageObject.domain == "CAT") {
+        let type = this.appService.get('queryParams').type || 'NP';
+        this.navMap = type == 'NP' ? navMapNP : navMapFU;
 
-        let controler = _.find(navMapNP, ['domain', 'controler'])
+        let controler = _.find(this.navMap, ['domain', 'controler'])
         controler.qustions.find(x =>
           (ashtma = _.find(x.options, ['text', 'Ashtma'])
           ));
-          jumpTo =
+        jumpTo =
           this
             .pageObject
             .jumpTo(ashtma.checked);
       }
-
     }
+
+    this.saveData();
 
     this
       .router
       .navigate(['generic1', jumpTo]);
   }
+
+  saveData() {
+    this.appService.httpPost('questionaires', this.navMap);
+  }
+
   previous() {
     this
-    .location
-    .back();
+      .location
+      .back();
 
   }
 

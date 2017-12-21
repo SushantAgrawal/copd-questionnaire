@@ -3,9 +3,8 @@ export const welcomeMap = {
     FU: 'welcomeb',
     all: 'welcomec'
 };
-export const urlMaps = {
-    questionaires: 'https://private-anon-898cfb6cb7-neuroshareapis.apiary-mock.com/neuroshare/api/all-questionnaire-responses/',
-    questionaires1: 'http://localhost:8081/listUsers'
+export const urlMaps = { 
+    questionaires: 'http://localhost:3003/listUsers'
 };
 export const navMapFU = {
     page1:
@@ -667,7 +666,7 @@ export const navMapNP = {
         jumpTo: (ashtma) => (
             (ashtma ? 'page3' : 'page5')
         ),
-        type: 'multiple',
+        type: 'copd',
         domain: 'CAT',
         qustions: [
             {
@@ -1033,6 +1032,7 @@ export const navMapNP = {
     page4: {
         descr1: `Asthma Control Test (ACT) continued`,
         text:'Select Only 1 response for each question',
+        progress:30,
         jumpTo: 'page5',
         type: 'multiple',
         qustions: [
@@ -1105,6 +1105,7 @@ export const navMapNP = {
     page5: {
         descr1: `Dyspnea test (mMRC):`,
         text:'Select only 1 Response',
+        progress:40,
         jumpTo: 'page6',
         type: 'single',
         qustions: [
@@ -1138,6 +1139,7 @@ export const navMapNP = {
     },
     page6: {
         descr1: `The Quality of your Days`,
+        progress:40,
         text:'Select only 1 Response',
         jumpTo: 'page7',
         type: 'single',
@@ -1172,6 +1174,7 @@ export const navMapNP = {
     },
     page7: {
         descr1: `You Activity level`,
+        progress:40,
         text:'Select only 1 Response',
         jumpTo: 'page8',
         type: 'single',
@@ -1203,6 +1206,7 @@ export const navMapNP = {
     page8: {
         descr1: `Please answer the following questions about your health over the last 12 months:`,
         text:'Select Only 1 response for each question',
+        progress:50,
         jumpTo: 'page9',
         type: 'mix',
         domain: 'Clinical Awareness',
@@ -1308,7 +1312,7 @@ export const navMapNP = {
     page9: {
         descr1: `Alcohol and Drug Use`,
         text:'Select Only 1 response for each question',
-        progress:60,
+        progress:55,
         jumpTo: 'page10',
         type: 'mix',
         qustions: [
@@ -1365,6 +1369,7 @@ export const navMapNP = {
     page10: {
         descr1: `Your Smoking History`,
         text:'Select Only 1 response for each question',
+        progress:60,
         jumpTo: 'page11',
         type: 'allComponent',
         domain: "Smoking",
@@ -1557,6 +1562,7 @@ export const navMapNP = {
             {
                 text: `Please select the date or select number of years you have quit using tobacco products?`,
                 answer_text: '',
+                controlType:'year',
                 options: [
                     {
                         text: 'Month and year selector'
@@ -1570,6 +1576,7 @@ export const navMapNP = {
     },
     page11: {
         descr1: `Your social history`,
+        progress:70,
         text:'Select Only 1 response for each question',
         jumpTo: 'page12',
         domain: 'CA-SocialHistory',
@@ -1645,6 +1652,7 @@ export const navMapNP = {
     page12:
         {
             descr1: `Health Conditions`,
+            progress:70,
             text: `Tell us about your pulmonary health conditions. Select all that apply.`,
             jumpTo: 'page13',
             type: 'multipleSelect',
@@ -1734,6 +1742,7 @@ export const navMapNP = {
     page13:
         {
             descr1: `Wheezing Triggers`,
+            progress:75,
             text: `Tell us about any triggers that lead to wheezing. Select all that apply`,
             jumpTo: 'page14',
             type: 'multipleSelect',
@@ -1808,6 +1817,7 @@ export const navMapNP = {
         {
             descr1: `Medications and Durable Medical Equipment`,
             text: `Difficulty with Medications:`,
+            progress:80,
             jumpTo: 'page15',
             type: 'select',
             qustions: [
@@ -1834,6 +1844,7 @@ export const navMapNP = {
         {
             descr1: `Medications and Durable Medical Equipment`,
             text: `Difficulty with Medications:`,
+            progress:80,
             jumpTo: 'page16',
             type: 'select',
             qustions: [
@@ -1867,6 +1878,7 @@ export const navMapNP = {
             descr1: `History of Symptoms`,
             text: `Tell us about any symptoms you are currently having.  Select all that apply`,
             jumpTo: 'page17',
+            progress:80,
             type: 'multipleSelect',
             qustions: [
                 {
@@ -1963,6 +1975,7 @@ export const navMapNP = {
         {
             descr1: `Surgical History`,
             text: `Have you ever had surgery on any of the following`,
+            progress:85,
             jumpTo: 'page18',
             type: 'select',
             qustions: [
@@ -2009,6 +2022,7 @@ export const navMapNP = {
         {
             descr1: `Health History`,
             text: `Have you ever been diagnosed with any of the following`,
+            progress:90,
             jumpTo: 'page19',
             type: 'multipleSelect',
             qustions: [
@@ -2081,6 +2095,7 @@ export const navMapNP = {
     page19: {
         descr1: `Your Home`,
         text:'',
+        progress:95,
         domain: 'Environment',
         jumpTo: 'page1',
         type: 'mix',
