@@ -39,7 +39,7 @@ export class NavigateComponent implements OnInit {
       }
       if (this.pageObject.domain && this.pageObject.domain == "CAT") {
         let type = this.appService.get('queryParams').type || 'NP';
-        this.navMap = type == 'NP' ? navMapNP : navMapFU;
+        this.navMap = type == 'FU' ? navMapFU:navMapNP  ;
 
         let controler = _.find(this.navMap, ['domain', 'controler'])
         controler.qustions.find(x =>
@@ -53,7 +53,6 @@ export class NavigateComponent implements OnInit {
     }
 
     this.saveData();
-debugger;
     if(jumpTo == 'exit')
     {
       this
