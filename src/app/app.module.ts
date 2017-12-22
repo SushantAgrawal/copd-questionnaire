@@ -13,6 +13,7 @@ import {AngularMaterialModule} from './angular-material/angular-material.module'
 import { FormsModule } from '@angular/forms';
 import { WelcomeaComponent } from './welcomea/welcomea.component';
 import { WelcomebComponent } from './welcomeb/welcomeb.component';
+import { EndPageComponent } from './end-page/end-page.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { WelcomebComponent } from './welcomeb/welcomeb.component';
     NavigateComponent,
     ControlComponent,
     WelcomeaComponent,
-    WelcomebComponent
+    WelcomebComponent,
+    EndPageComponent
   ],
   imports: [
     BrowserModule,FormsModule,BrowserAnimationsModule,RouterModule.forRoot(ROUTES), HttpClientModule,AngularMaterialModule
