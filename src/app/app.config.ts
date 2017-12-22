@@ -1043,7 +1043,7 @@ export const navMapFU = {
             descr1: `Medications and Durable Medical Equipment`,
             text: `Difficulty with Medications:`,
             progress:80,
-            jumpTo: 'page1',
+            jumpTo: 'exit',
             type: 'select',
             qustions: [
                 {
@@ -2600,7 +2600,7 @@ export const navMapNP = {
         text:'',
         progress:95,
         domain: 'Environment',
-        jumpTo: 'page1',
+        jumpTo: 'exit',
         type: 'mix',
         qustions: [
             {

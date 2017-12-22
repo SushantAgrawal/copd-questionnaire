@@ -53,10 +53,20 @@ export class NavigateComponent implements OnInit {
     }
 
     this.saveData();
+debugger;
+    if(jumpTo == 'exit')
+    {
+      this
+      .router
+      .navigate([jumpTo]);
 
-    this
+    }else{
+      this
       .router
       .navigate(['generic1', jumpTo]);
+    }
+
+   
   }
 
   saveData() {

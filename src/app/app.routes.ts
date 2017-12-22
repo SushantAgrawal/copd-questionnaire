@@ -5,6 +5,7 @@ import { ControlComponent } from './control/control.component';
  import {WelcomebComponent} from './welcomeb/welcomeb.component';
 // import {WelcomecComponent} from './welcomec/welcomec.component';
 import {Generic1Component} from './generic1/generic1.component';
+import { EndPageComponent } from './end-page/end-page.component';
 //ScreeningQuestionsComponent
 
 export const ROUTES : Routes = [
@@ -22,5 +23,10 @@ export const ROUTES : Routes = [
     {
       path: 'generic1/:pageName', pathMatch:'full',
       component: Generic1Component
+    }
+    ,
+    {
+      path: 'exit', pathMatch:'full',
+      component: EndPageComponent
     }
   ];
