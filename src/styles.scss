@@ -113,7 +113,9 @@ margin-bottom: 60px;
 .tblContent tr:nth-child(even){
     background-color: #deebf7;
   }
-
+  .tblContent tr.altcolor{
+    background-color: #deebf7;
+  }
 .progressbar{
     background-color: #b2b2b2;
     -webkit-border-radius: 10px; 

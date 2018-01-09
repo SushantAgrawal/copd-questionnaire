@@ -13,6 +13,7 @@ app.use((req, res, next) => {
     next();
 });
 
+
 var __publicFolder = __dirname + '/dist';
 app.use(express.static(__publicFolder));
 
@@ -20,26 +21,12 @@ app.use(express.static(__publicFolder));
 app.get('/', function (req, res) {
     res.sendFile(path.join(__publicFolder + '/index.html'));
 });
-// app.get('/:page', function (req, res) { res.sendFile(path.join(__publicFolder
-// + '/index.html')); });
-// app.get('/*landingPage', (req, res) => {
-//     res.sendFile(path.join(__publicFolder + '/index.html'));
-// })
-
-// app.get('/*', (req, res) => {
-//     let accept = req.headers['accept'];
-//     if (accept.indexOf('text/html') != -1) {
-//         res.sendFile(path.join(__publicFolder + '/index.html'));
-//     } else {
-//         res.json({redirectUrl: req.url});
-//     }
-// })
 
 // Allow for Jenkins smoke test
 app.get('/test', function (req, res) {
     res.send('hello jenkins');
 });
 
-// Running the server app.listen(argv.p, _ => console.log('Running on port ' +
-// argv.p));
+// Running the server
+//app.listen(argv.p, _ => console.log('Running on port ' + argv.p));
 app.listen(4200, _ => console.log('Running on port ' + 4200));

@@ -111,28 +111,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'Never',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'All the Time',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
 
                 ]
@@ -144,28 +139,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'No Phlegm',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Full of Phlegm',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
 
                 ]
@@ -177,28 +167,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'Not at All',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Very Tight',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -208,28 +193,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'Not Breathless',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Very Breathless',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -239,28 +219,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'Not at All',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Very Limited',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -270,28 +245,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'Not Confident',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Very Confident',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -301,28 +271,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'Very Soundly',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Not Soundly',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -332,28 +297,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'Lots of Energy',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'No Energy',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             }
@@ -372,28 +332,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'All of the time',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: 'Most of the time',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: 'Some of the time',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: 'A Little of the Time',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'None of the Time',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -403,28 +358,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'More than once a day',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: 'Once a day',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '3 to 6 Times a day',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: 'Once or Twice a week',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Not at All',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
 
                 ]
@@ -438,28 +388,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: '4 or more nights a week',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '2 to 3 times a week',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: 'Once a week',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: 'Once or Twice',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Not at All',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             }
@@ -479,28 +424,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: '3 or more times per day',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '1 to 2 times per day',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '2 to 3 times per week',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: 'Once a week or less',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Not at All',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -510,28 +450,23 @@ export const navMapFU = {
                 options: [
                     {
                         text: 'Not Controlled',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: 'Poorly Controlled',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: 'Somewhat Controlled',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: 'Well Controled',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Completely Controlled',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
 
                 ]
@@ -1177,28 +1112,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'Never',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'All the Time',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
 
                 ]
@@ -1210,28 +1140,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'No Phlegm',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Full of Phlegm',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
 
                 ]
@@ -1243,28 +1168,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'Not at All',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Very Tight',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -1274,28 +1194,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'Not Breathless',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Very Breathless',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -1305,28 +1220,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'Not at All',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Very Limited',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -1336,28 +1246,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'Not Confident',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Very Confident',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -1367,28 +1272,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'Very Soundly',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Not Soundly',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -1398,28 +1298,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'Lots of Energy',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: '',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'No Energy',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             }
@@ -1438,28 +1333,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'All of the time',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: 'Most of the time',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: 'Some of the time',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: 'A Little of the Time',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'None of the Time',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -1469,28 +1359,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'More than once a day',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: 'Once a day',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '3 to 6 Times a day',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: 'Once or Twice a week',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Not at All',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
 
                 ]
@@ -1504,28 +1389,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: '4 or more nights a week',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '2 to 3 times a week',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: 'Once a week',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: 'Once or Twice',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Not at All',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             }
@@ -1545,28 +1425,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: '3 or more times per day',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: '1 to 2 times per day',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: '2 to 3 times per week',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: 'Once a week or less',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Not at All',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
                 ]
             },
@@ -1576,28 +1451,23 @@ export const navMapNP = {
                 options: [
                     {
                         text: 'Not Controlled',
-                        score: `1`,
-                        checked: `false`
+                        score: `1`
                     },
                     {
                         text: 'Poorly Controlled',
-                        score: `2`,
-                        checked: `false`
+                        score: `2`
                     },
                     {
                         text: 'Somewhat Controlled',
-                        score: `3`,
-                        checked: `false`
+                        score: `3`
                     },
                     {
                         text: 'Well Controled',
-                        score: `4`,
-                        checked: `false`
+                        score: `4`
                     },
                     {
                         text: 'Completely Controlled',
-                        score: `5`,
-                        checked: `false`
+                        score: `5`
                     },
 
                 ]

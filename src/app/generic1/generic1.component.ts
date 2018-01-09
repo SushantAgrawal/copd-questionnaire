@@ -19,6 +19,7 @@ export class Generic1Component implements OnInit {
   progress: any;
   value: any;
   years: any;
+  row:any;
   month: any  =  [['January', '01'],  ['February', '02'],  ['March', '03'],  ['April', '04'],  ['May', '05'],  ['June', '06'],  ['July', '07'],  ['August', '08'],  ['September', '09'],  ['October', '10'],  ['November', '11'],  ['December', '12']];
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     private appService: AppService, private _sanitizer: DomSanitizer) {
@@ -26,6 +27,7 @@ export class Generic1Component implements OnInit {
     activatedRoute
       .params
       .subscribe(param => {
+        this.row=0;
         param.pageName && (this.pageName = param.pageName);
         this.pageObject = type == 'NP' ? navMapNP[this.pageName] : navMapFU[this.pageName];
         this.progress = this.pageObject.progress;
@@ -37,7 +39,7 @@ export class Generic1Component implements OnInit {
   }
 
   getCSSClasses(value) {
-    //debugger;
+
     let cssClass = '';
     let node;
     if (this.pageObject.domain && this.pageObject.domain == 'Clinical Awareness') {
