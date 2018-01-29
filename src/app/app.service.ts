@@ -9,7 +9,10 @@ import { utils } from 'protractor';
 import { environment } from '../environments/environment';
 import { DatePipe } from '@angular/common';
 import { welcomeMap, urlMaps } from './app.config';
-
+import * as _ from "lodash";
+import * as jsPDF from 'jspdf';
+import 'jspdf-autotable';
+import { navMapPrint } from './app.config';
 
 @Injectable()
 export class AppService {
@@ -17,6 +20,9 @@ export class AppService {
   subject: Subject<any>;
   urlParams: any;
   deviceInfo = null;
+  newHeight: number = 40;
+  newLeftMargin: number = 15;
+
   messages = {
     idNotMappedToUrl: 'Message id is not mapped to http url in config.ts file at application root',
     httpGetUnknownError: 'Unknown error encountered while making http request'
@@ -33,7 +39,8 @@ export class AppService {
     }, {});
     this.set('queryParams', urlObject);
     let welcome = this.get('queryParams')['type'] || 'NP';
-    router.navigate([welcomeMap[welcome]]);
+    welcome = _.toUpper(welcome);
+    router.navigate([welcomeMap[welcome]] , { queryParams: { type: welcome } });
   }
   get(id) {
     return (this.global[id]);
@@ -42,6 +49,56 @@ export class AppService {
   set(id, value) {
     this.global[id] = value;
   }
+
+  convert() {
+    var doc = new jsPDF();
+    var i = 0;
+    doc.setFont('helvetica');
+    doc.setFontType('normal');
+    doc.setFontSize(12);
+    doc.text(50, 32, 'COPD-SHARE New Patient Questionnaire');
+
+    doc.setFont('helvetica');
+    doc.setFontType('normal');
+    doc.setFontSize(12);
+    doc.text(this.newLeftMargin, 50, 'Alice Smith');
+
+    doc.setFont('helvetica');
+    doc.setFontType('normal');
+    doc.setFontSize(10);
+    doc.text(this.newLeftMargin, 60, '9/21/2017');
+
+    Object.keys(navMapPrint).map((key) => {
+      console.log(navMapPrint[key].quesitonHeader)
+      doc.autoTable(this.getColumns(navMapPrint[key].quesitonHeader),
+        this.getData(navMapPrint[key].questions, navMapPrint[key].quesitonHeader), {
+          startY: (i > 0) && doc.autoTable.previous.finalY,
+          margin: {
+              top: (i == 0) && 70,
+          },
+          //startY: doc.autoTable.previous.finalY,
+          pageBreak: 'avoid',
+          theme: 'plain',
+          headerStyles: { fillColor: [91, 155, 213] }
+        });
+      i++;
+    });
+    doc.save('Print.pdf');
+  }
+  getData(questions, quesitonHeader) {
+    var data = [];
+    questions.forEach(element => {
+      element.question && data.push({ quesitonHeader: element.question });
+      element.answer && data.push({ quesitonHeader: "\t-\t" + element.answer });
+    });
+    return data;
+  }
+
+  getColumns(quesitonHeader) {
+    return [
+      { title: quesitonHeader, dataKey: "quesitonHeader" }
+    ];
+  };
   getUrlParams(rawParams) {
     rawParams = decodeURIComponent(rawParams);
     let urlArray = rawParams.slice(rawParams.indexOf('?') + 1).split('&');

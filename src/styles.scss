@@ -60,6 +60,12 @@ body{
 .btn-left{
     align-self: flex-start;
 }
+.btn-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position:absolute;
+}
 
 .btn-right{
     margin-left: auto!important;

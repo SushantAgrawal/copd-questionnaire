@@ -4,7 +4,9 @@ export const welcomeMap = {
     all: 'welcomec'
 };
 export const urlMaps = { 
-    questionaires: 'http://localhost:3003/listUsers'
+    questionaires: 'http://localhost:3003/listUsers',
+    "B&T:patients" :'http://www.cpmc.org/services/pulmonary/contact.html',
+    "PAMF:patients" :'http://www.pamf.org/pulmonary/'
 };
 export const navMapFU = {
     page1:
@@ -579,7 +581,7 @@ export const navMapFU = {
         text:'Select Only 1 response for each question',
         progress:50,
         jumpTo: 'page9',
-        type: 'mix',
+        type: 'page8',
         domain: 'Clinical Awareness',
         qustions: [
             {
@@ -677,7 +679,19 @@ export const navMapFU = {
                         text: `No`
                     }
                 ]
+            },
+            {
+                text:`What was your last oximetry (SpaO2) test results?`,
+                controlType:'multi',
+                answer_text: '',
+                answer_date:'',
+            },
+            {
+                text:`I have completed or will complete Pulmonary Therapy on`, 
+                controlType:'caln',             
+                answer_date:'',
             }
+
         ]
     },
     page9: {
@@ -1006,7 +1020,7 @@ export const navMapFU = {
                 }
             ]
         }
-}
+};
 export const navMapNP = {
     page1:
         {
@@ -1580,7 +1594,7 @@ export const navMapNP = {
         text:'Select Only 1 response for each question',
         progress:50,
         jumpTo: 'page9',
-        type: 'mix',
+        type: 'page8',
         domain: 'Clinical Awareness',
         qustions: [
             {
@@ -1678,6 +1692,17 @@ export const navMapNP = {
                         text: `No`
                     }
                 ]
+            },
+            {
+                text:`What was your last oximetry (SpaO2) test results?`,
+                controlType:'multi',
+                answer_text: '',
+                answer_date:'',
+            },
+            {
+                text:`I have completed or will complete Pulmonary Therapy on`, 
+                controlType:'caln',             
+                answer_date:'',
             }
         ]
     },
@@ -2586,3 +2611,366 @@ export const navMapNP = {
         ]
     }
 };
+export const navMapPrint = {
+    page1: {
+        quesitonHeader: `Reason for Visit`,
+        questions: [
+            {
+                answer: "COPD",
+            },
+            {
+                answer: "Coughing up Blood",
+            },
+            {
+                answer: "Ashtma",
+            }
+        ]
+    },
+    page2: {
+        quesitonHeader: `COPD Assessment Test`,
+        questions: [
+            {
+                question: `How often do you cough?`,
+                answer: "3",
+            },
+            {
+                question: `How much phlegm do you have in your chest?`,
+                answer: "3",
+            },
+            {
+                question: `How tight does your chest feel?`,
+                answer: "3",
+            },
+            {
+                question: `How breathles do you get walking uphill or walking up a flight of stairs`,
+                answer: "3",
+            },
+            {
+                question: `Are you limited to doing activities at home?`,
+                answer: "3",
+            },
+            {
+                question: `Are you confident leaving your home despite your lung condition?`,
+                answer: "3",
+            },
+            {
+                question: `How soundly do you sleep because of you lung condition`,
+                answer: "3",
+            },
+            {
+                question: `How would you rate your energy level`,
+                answer: "3",
+            },
+            {
+                question: `How would you rate your energy level`,
+                answer: "3",
+            }
+        ]
+    },
+    page3: {
+        quesitonHeader: `Asthma Control Test (ACT)`,
+        questions: [
+            {
+                question: "In the past 4 weeks, how much did your asthma keep you from getting as much done at home and/or work?",
+                answer: 'All of the time'
+            },
+            {
+                question: "During the past 4 weeks, how often have you had shortness of breath?",
+                answer: "Once a day",
+            },
+            {
+                question: `During the past 4 weeks, how often did your asthma symptoms  (coughing, wheezing, shortness of breath, chest tightness, or pain) wake you up at night or earlier than usual in the morning`,
+                answer: '4 or more nights a week'
+            }
+        ]
+    },
+    page4: {
+        quesitonHeader: `Asthma Control Test (ACT) continued`,
+        text: 'Select Only 1 response for each question',
+        progress: 30,
+        jumpTo: 'page5',
+        type: 'multiple',
+        questions: [
+            {
+                question: `During the past 4 weeks, how often have you used 
+                your rescue inhaler or nebulizer medicine (such as albuterol)?`,
+                answer: '3 or more times per day',
+            },
+            {
+                question: `How would you rate your asthma control during the past 4 weeks`,
+                answer: '',
+            }
+        ]
+    },
+    page5: {
+        quesitonHeader: `Dyspnea test (mMRC):`,
+        questions: [
+            {
+                question: `Select the response that best describes, when you become breathless:`,
+                answer: 'On level ground, I walk slower than people of the same age because of breathlessness, or have to stop for breath when walking at my own pace',
+            }
+        ]
+    },
+    page6: {
+        quesitonHeader: "The Quality of your Days",
+        questions: [
+            {
+                question: "Select the response that best describes the quality of your days:",
+                answer: "I have about an equali number of good dayts and bad days",
+            }
+        ]
+    },
+    page7: {
+        quesitonHeader: "You Activity level",
+        questions: [
+            {
+                question: "Select the response that best describes your activity level:",
+                answer: "I get exercise occaionally",
+            }
+        ]
+    },
+    page8: {
+        quesitonHeader: "Health over the past 12 months",
+        questions: [
+            {
+                question: "How many exacerbations have you had over the last 12 months?",
+                answer: "1",
+            },
+            {
+                question: "How many exacerbations lead you to visit the emergency or urgent care?",
+                answer: "0",
+            },
+            {
+                question: "How many of the above exacerbations required hospital admission?",
+                answer: "1",
+            },
+            {
+                question: "Were you prescribed antibiotics by another provider?",
+                answer: "Yes",
+            },
+            {
+                question: "What was your last oximetry (SpaO2) test results?",
+                answer: "Yes",
+            },
+            {
+                question: "I have completed or will complete Pulmonary Therapy on",
+                answer: "Yes",
+            }
+        ]
+    },
+    page9: {
+        quesitonHeader: "Alcohol and Drug Use",
+        questions: [
+            {
+                question: "Do you drink alcohol?",
+                answer: "Yes",
+            },
+            {
+                question: "Do you smoke marijuana?",
+                answer: "Yes",
+            },
+            {
+                question: "Do you use recreational drugs?",
+                answer: "Yes",
+            },
+            {
+                question: "Do you have a dependency on any substance?",
+                answer: "Yes",
+            }
+        ]
+    },
+    page10: {
+        quesitonHeader: "Your Smoking History",
+        questions: [
+            {
+                question: "Do you live, or frequently visit with someone who smokes?",
+                answer: "Yes",
+            },
+            {
+                question: "Have you recently been exposed to:",
+                answer: "Non-Tobacco Smoke"
+            },
+            {
+                question: "Do you currently use tobacco?",
+                answer: "Yes",
+            },
+            {
+                question: "If yes, what type of product do you use?",
+                answer: "Cigarettes",
+            },
+            {
+                question: "How often do you use/smoke cigaretess per day?",
+                answer: "1 pack per day",
+            },
+            {
+                question: "How many years have you used tobacco products?",
+                answer: "11 to 15",
+            },
+            // {
+            //     question: "Please select the date or select number of years you have quit using tobacco products?",
+            //     answer:  "11 to 15",
+            // }
+        ]
+    },
+    page11: {
+        quesitonHeader: "Your social history",
+        questions: [
+            {
+                question: "Did you migrate to the U.S.A?",
+                answer: "Yes",
+            },
+            {
+                question: "If yes, from which continent?",
+                answer: "Africa",
+            },
+            {
+                question: "How many years have you lived in the U.S.A?",
+                answer: "5 or less",
+            },
+            {
+                question: "Do you have a dependency on any substance?",
+                answer: "Yes",
+            }
+        ]
+    },
+    page12: {
+        quesitonHeader: "Health Conditions",
+        questions: [
+            {
+                answer: "Asthma",
+            },
+            {
+                answer: "Pneumonia/Infection",
+            },
+            {
+                answer: "Hay Fever/Alergic Rhinitis",
+            },
+            {
+                answer: "Interstitial Lung Disease",
+            }
+        ]
+    },
+    page13: {
+        quesitonHeader: "Wheezing Triggers",
+        questions: [
+            {
+                answer: "Tobacco Smoke",
+            },
+            {
+                answer: "Foods",
+            },
+            {
+                answer: "Dust",
+            },
+            {
+                answer: "Cold air",
+            }
+        ]
+    },
+    page14: {
+        quesitonHeader: "Medications and Durable Medical Equipment",
+        questions: [
+            {
+                answer: "I have trouble remembering to take some of my medications",
+            },
+            {
+                answer: "I have difficulty paying for some of my medications",
+            },
+            {
+                answer: "I am having side effects from my medications",
+            },
+            {
+                answer: "I need instructions on how to take my medications",
+            }
+        ]
+    },
+    page15: {
+        quesitonHeader: "Medications and Durable Medical Equipment",
+        questions: [
+            {
+                answer: "Steriods",
+            },
+            {
+                answer: "Antibiotics",
+            },
+            {
+                answer: "Nebulizer",
+            },
+            {
+                answer: "Rescue Inhaler",
+            }
+        ]
+    },
+    page16: {
+        quesitonHeader: "History of Symptoms",
+        questions: [
+            {
+                answer: "Shortness of Breath",
+            },
+            {
+                answer: "Coughing up Blood",
+            },
+            {
+                answer: "Post nasal drip",
+            },
+            {
+                answer: "Dry cough",
+            }
+        ]
+    },
+    page17: {
+        quesitonHeader: "Surgical History",
+        questions: [
+            {
+                answer: "Head; including Eye, Nose, Mouth, or Ear",
+            },
+            {
+                answer: "Neck, including Throat",
+            },
+            {
+                answer: "Shoulder, Arm, Wrist, or Hand",
+            },
+            {
+                answer: "Chest, including Breast, Heart, or Lungs",
+            }
+        ]
+    },
+    page18: {
+        quesitonHeader: "Health History",
+        questions: [
+            {
+                answer: "Hypertension",
+            },
+            {
+                answer: "Diabetes",
+            },
+            {
+                answer: "Heart Attack ",
+            },
+            {
+                answer: "Stroke",
+            }
+        ]
+    },
+    page19: {
+        quesitonHeader: "Your Home",
+        questions: [
+            {
+                question: "Do you have carpeting in your home?",
+                answer: "Do you have carpeting in your home?",
+            },
+            {
+                question: "If yes, how often is it steam cleaned?",
+                answer: "Yearly",
+            },
+            {
+                question: "How would you describe your home location?",
+                answer: "Urban",
+            },
+            {
+                question: "How many years have you lived at your current residence?",
+                answer: "6 - 10",
+            }
+        ]
+    },
+}

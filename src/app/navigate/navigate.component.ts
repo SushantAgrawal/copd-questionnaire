@@ -64,7 +64,7 @@ export class NavigateComponent implements OnInit {
     } else {
       this
         .router
-        .navigate(['generic1', jumpTo]);
+        .navigate(['generic1', jumpTo], { queryParamsHandling: "merge"});
     }
   }
 

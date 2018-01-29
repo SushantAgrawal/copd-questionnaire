@@ -3,17 +3,13 @@
     <div class="contentArea">
       <div class="leftContent">
         <div class="bodyTxt">
-            Hello {{name}},<br/><br/>
-            Thank you for choosing Sutter Health Pulmonology Group!
-            <br/><br/>
+                <br/><br/>  <br/><br/> 
+            Thank you {{name}} for completing the New Patient Questionnaire.
+            <br/><br/> 
+            Please give the tablet to the medical assistant when called.
+            <br/><br/> 
+            Your provider will review the questionnaire results with you during your office visit today.
             
-            We are interested in your hearing about your health, wellbeing, and symptoms of your pulmonary condition.
-            <br/><br/>
-    
-            If you can’t or don’t want to answer any question, simply tap the “Continue” button. Your provider will discuss your responses during your visit with us today.
-            <br/><br/>
-    
-            Please let your provider know if you’ve been seen by a non Sutter providers.
             <br/><br/>           
         </div>    
       </div>
@@ -24,6 +20,6 @@
     </div>
     
     <div class="btnContainer">
-        <button mat-raised-button color="primary" class="btn-left">Exit </button>
+        <button mat-raised-button color="primary" class="btn-center" (click)="exit()" >Exit </button>
     </div>
     </div>

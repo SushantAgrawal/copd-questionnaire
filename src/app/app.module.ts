@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { WelcomeaComponent } from './welcomea/welcomea.component';
 import { WelcomebComponent } from './welcomeb/welcomeb.component';
 import { EndPageComponent } from './end-page/end-page.component';
+import {DateAdapter} from '@angular/material';
+import { DateFormat } from './date-format';
 
 
 @NgModule({
@@ -30,10 +32,14 @@ import { EndPageComponent } from './end-page/end-page.component';
   imports: [
     BrowserModule,FormsModule,BrowserAnimationsModule,RouterModule.forRoot(ROUTES), HttpClientModule,AngularMaterialModule
   ],
-  providers: [AppService],
+  providers: [AppService,{ provide: DateAdapter, useClass: DateFormat }],
   bootstrap: [AppComponent],
   entryComponents: [    
     snackBarComponent
   ]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(private dateAdapter:DateAdapter<Date>) {
+		dateAdapter.setLocale('en-in'); // DD/MM/YYYY
+	}
+}

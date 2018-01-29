@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {urlMaps} from '../app.config';
 
 @Component({
   selector: 'app-end-page',
@@ -12,5 +13,7 @@ export class EndPageComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  exit() {
+    window.location.href = urlMaps['B&T:patients'];
+  }
 }

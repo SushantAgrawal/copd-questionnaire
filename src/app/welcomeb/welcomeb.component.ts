@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-
+import { urlMaps } from '../app.config';
 @Component({
   selector: 'app-welcomeb',
   templateUrl: './welcomeb.component.html',
@@ -15,7 +15,10 @@ export class WelcomebComponent implements OnInit {
   }
   next(){
     // this.router.navigate(['generic1','q1']);
-    this.router.navigate(['generic1','page1']);
+    this.router.navigate(['generic1','page1'], { queryParamsHandling: "merge"});
    }
+   exit() {
+    window.location.href = urlMaps['B&T:patients'];
+  }
 
 }

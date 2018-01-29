@@ -1,102 +1,111 @@
 <div class="wrapperContianerInner">
-<section class="progressbar">
-  <div class="barCont">
-       <div class="blueBar"  [attr.style]="value"></div>
+  <section class="progressbar">
+    <div class="barCont">
+      <div class="blueBar" [attr.style]="value"></div>
+    </div>
+    <div class="progressTxt">{{progress}}% completed</div>
+
+  </section>
+
+  <div class="pageTitle">{{pageObject.descr1}}</div>
+  <div class="tblContent multipleSelectCont" *ngIf="pageObject.type=='multipleSelect'">
+    <table>
+      <tr *ngFor="let item of pageObject.qustions ; let g = index" align="right">
+        <td *ngFor="let option of item.options ; let h = index" >
+          <label (click)="addValue(option)">{{option.text}}</label>
+          <mat-checkbox  [(ngModel)]="option.checked" [value]="option.text"></mat-checkbox>
+        </td>
+      </tr>
+    </table>
   </div>
-  <div class="progressTxt">{{progress}}% completed</div>
-
-</section>
-
-    <div class="pageTitle">{{pageObject.descr1}}</div>
-    <div class="tblContent multipleSelectCont" *ngIf="pageObject.type=='multipleSelect'">
-      <table>
-        <tr *ngFor="let item of pageObject.qustions ; let g = index" align="right">
-          <td *ngFor="let option of item.options ; let h = index">
-            <label>{{option.text}}</label>
-            <mat-checkbox [(ngModel)]="option.checked" [value]="option.text"></mat-checkbox>
+  <div class="tblContent contentAlign90x10" *ngIf="pageObject.type=='select'">
+    <table *ngFor="let item of pageObject.qustions ; let g = index">
+      <tr *ngFor="let option of item.options ; let h = index">
+        <td align="left" (click)="addValue(option)">
+          <label>{{option.text}}</label>
+        </td>
+        <td align="left">
+          <mat-checkbox [(ngModel)]="option.checked" [value]="option.text"></mat-checkbox>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="tblContent toggleBtnGroupPage2" *ngIf="pageObject.type=='copd'">
+    <table>
+      <tbody>
+        <tr *ngFor="let item of pageObject.qustions ; let g = index">
+          <td>{{item.text}}</td>
+          <td>
+            <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">
+              <div class="checkBoxAssesment" *ngFor="let option of item.options ; let h = index">
+                <mat-button-toggle [value]="option.score">{{option.score}}
+                </mat-button-toggle>
+                <br/>
+                <div class="dashbar"></div>
+                <div class="txtAssesment">{{option.text}}</div>
+              </div>
+            </mat-button-toggle-group>
           </td>
         </tr>
-      </table>
-    </div>
-    <div class="tblContent contentAlign90x10" *ngIf="pageObject.type=='select'">
-      <table *ngFor="let item of pageObject.qustions ; let g = index">
-        <tr *ngFor="let option of item.options ; let h = index">
-          <td align="left">
-            <label>{{option.text}}</label>
-          </td>
-          <td align="left">
-            <mat-checkbox [(ngModel)]="option.checked" [value]="option.text"></mat-checkbox>
+      </tbody>
+    </table>
+  </div>
+  <div class="tblContent toggleBtnGroupPage2" *ngIf="pageObject.type=='multiple'">
+    <table>
+      <tbody>
+        <tr *ngFor="let item of pageObject.qustions ; let g = index">
+          <td>{{item.text}}</td>
+          <td>
+            <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">
+              <div class="checkBoxAssesment" *ngFor="let option of item.options ; let h = index">
+                <mat-button-toggle [value]="option.score">{{option.score}}
+                </mat-button-toggle>
+                <br/>
+                <div class="txtAssesment">{{option.text}}</div>
+              </div>
+            </mat-button-toggle-group>
           </td>
         </tr>
-      </table>
-    </div>
-    <div class="tblContent toggleBtnGroupPage2" *ngIf="pageObject.type=='copd'">
-        <table>
-          <tbody>
-            <tr *ngFor="let item of pageObject.qustions ; let g = index">
-              <td>{{item.text}}</td>
-              <td>
-                <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">
-                  <div class="checkBoxAssesment" *ngFor="let option of item.options ; let h = index">
-                    <mat-button-toggle [value]="option.score">{{option.score}}
-                    </mat-button-toggle>
-                    <br/>
-                    <div class="dashbar"></div>
-                    <div class="txtAssesment">{{option.text}}</div>
-                  </div>
-                </mat-button-toggle-group>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="pageObject.type=='single'">
+    <div *ngFor="let item of pageObject.qustions ; let g = index">
+      <div class="subHeading">
+        {{item.text}}
+      </div>
+      <div class="tblContent contentAlign90x10">
+        <mat-radio-group [(ngModel)]="item.answer_text">
+          <table>
+            <tr *ngFor="let option of item.options ; let h = index">
+              <td (click)="addRadio(option,item)">{{option.text}}</td>
+              <td >
+                <mat-radio-button [value]="option.text">
+                </mat-radio-button>
               </td>
             </tr>
-          </tbody>
-        </table>
-      </div>
-    <div class="tblContent toggleBtnGroupPage2" *ngIf="pageObject.type=='multiple'">
-      <table>
-        <tbody>
-          <tr *ngFor="let item of pageObject.qustions ; let g = index">
-            <td>{{item.text}}</td>
-            <td>
-              <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">
-                <div class="checkBoxAssesment" *ngFor="let option of item.options ; let h = index">
-                  <mat-button-toggle [value]="option.score">{{option.score}}
-                  </mat-button-toggle>
-                  <br/>
-                  <div class="txtAssesment">{{option.text}}</div>
-                </div>
-              </mat-button-toggle-group>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div *ngIf="pageObject.type=='single'">
-      <div *ngFor="let item of pageObject.qustions ; let g = index">
-
-        <div class="subHeading">
-          {{item.text}}
-        </div>
-
-        <div class="tblContent contentAlign90x10">
-          <mat-radio-group [(ngModel)]="item.answer_text">
-            <table>
-              <tr *ngFor="let option of item.options ; let h = index">
-                <td>{{option.text}}</td>
-                <td>
-                  <mat-radio-button [value]="option.text">
-                  </mat-radio-button>
-                </td>
-              </tr>
-            </table>
-          </mat-radio-group>
-        </div>
+          </table>
+        </mat-radio-group>
       </div>
     </div>
-    <div class="mix-toggleBtnGroup" *ngIf="pageObject.type=='mix'">
-      <table>
-               <tbody>
-          <tr *ngFor="let item of pageObject.qustions ; let g = index" [attr.id]="g" [ngClass]="getCSSClasses(g)">
-            <td>{{item.text}}</td>
-            <td>
+  </div>
+  <div class="mix-toggleBtnGroup" *ngIf="pageObject.type=='page8'">
+    <table>
+      <tbody>
+        <tr *ngFor="let item of pageObject.qustions ; let g = index" [attr.id]="g" [ngClass]="getCSSClasses(g)">
+          <td>{{item.text}}</td>
+          <td>
+            <div *ngIf="item.controlType=='multi'">
+                <input matInput [matDatepicker]="picker" [(ngModel)]="item.answer_date" readonly placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </div>
+            <div *ngIf="item.controlType=='caln'">
+                <input matInput [matDatepicker]="picker1" [(ngModel)]="item.answer_date" readonly placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </div>
+            <div *ngIf="!item.controlType">
               <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">
                 <div *ngFor="let option of item.options ; let h = index">
                   <mat-button-toggle [name]="g" [value]="option.text">{{option.text}}
@@ -104,46 +113,66 @@
                   <br/>
                 </div>
               </mat-button-toggle-group>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="toggleBtnGroup" *ngIf="pageObject.type=='allComponent'">
-      <table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mix-toggleBtnGroup" *ngIf="pageObject.type=='mix'">
+    <table>
       <tbody>
-          <tr *ngFor="let item of pageObject.qustions ; let g = index" [attr.id]="g" [ngClass]="getCSSClasses(g)">
-            <td>{{item.text}}</td>
-            <td>
-              <mat-button-toggle-group [(ngModel)]="item.answer_text" *ngIf ="!item.controlType; else yearControl">
-                <div class="btn-toggle" *ngFor="let option of item.options ; let h = index">
-                  <mat-button-toggle [name]="g" [value]="option.text">{{option.text}}
-                  </mat-button-toggle>
-                  <br/>
-                </div>
-              </mat-button-toggle-group>
-              <ng-template #yearControl>
-                  <mat-form-field>
-                      <mat-select placeholder="Month"  [(ngModel)]="item.mm_Answer_text">
-                        <mat-option *ngFor="let mm of month" [value]="mm[1]">
-                          {{ mm[0] }}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  <mat-form-field>
-                      <mat-select placeholder="Year"  [(ngModel)]="item.answer_text">
-                        <mat-option *ngFor="let year of years" [value]="year">
-                          {{ year }}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-              </ng-template>
-              
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <tr *ngFor="let item of pageObject.qustions ; let g = index" [attr.id]="g" [ngClass]="getCSSClasses(g)">
+          <td>{{item.text}}</td>
+          <td>
+            <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">
+              <div *ngFor="let option of item.options ; let h = index">
+                <mat-button-toggle [name]="g" [value]="option.text">{{option.text}}
+                </mat-button-toggle>
+                <br/>
+              </div>
+            </mat-button-toggle-group>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="toggleBtnGroup" *ngIf="pageObject.type=='allComponent'">
+    <table>
+      <tbody>
+        <tr *ngFor="let item of pageObject.qustions ; let g = index" [attr.id]="g" [ngClass]="getCSSClasses(g)">
+          <td>{{item.text}}</td>
+          <td>
+            <mat-button-toggle-group [(ngModel)]="item.answer_text" *ngIf="!item.controlType; else yearControl">
+              <div class="btn-toggle" *ngFor="let option of item.options ; let h = index">
+                <mat-button-toggle [name]="g" [value]="option.text">{{option.text}}
+                </mat-button-toggle>
+                <br/>
+              </div>
+            </mat-button-toggle-group>
+            <ng-template #yearControl>
+              <mat-form-field>
+                <mat-select placeholder="Number" [(ngModel)]="item.mm_Answer_text">
+                  <mat-option *ngFor="let in1 of numTimeDueration" [value]="in1">
+                    {{ in1 }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Time Frame" [(ngModel)]="item.answer_text">
+                  <mat-option *ngFor="let in2 of timeFrame" [value]="in2">
+                    {{ in2 }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </ng-template>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <app-navigate [pageObject]="pageObject"></app-navigate>
 

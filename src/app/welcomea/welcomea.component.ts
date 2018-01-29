@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import { welcomeMap} from  '../app.config';
+import { Router } from '@angular/router';
+import { urlMaps } from '../app.config';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-welcomea',
@@ -9,17 +10,19 @@ import { welcomeMap} from  '../app.config';
 })
 export class WelcomeaComponent implements OnInit {
 
-  name ='Patient1';
-  drName= 'Scott';
-   constructor(private router:Router) {
- 
-    }
- 
-   ngOnInit() {
-   }
- 
-   next(){
-    
-    this.router.navigate(['generic1','page1']);
-   }
+  name = 'Patient1';
+  drName = 'Scott';
+  constructor(private router: Router,private appService: AppService) {
+    //appService.convert();
+  }
+
+  ngOnInit() {
+  }
+
+  next() {
+    this.router.navigate(['generic1', 'page1'], { queryParamsHandling: "merge" });
+  }
+  exit() {
+    window.location.href = urlMaps['B&T:patients'];
+  }
 }
