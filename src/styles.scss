@@ -167,6 +167,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
         }
     }
 }
+.multipleSelectDiv{
+    display: flot;
+    width: 90%;
+    display:inline-block;
+    cursor: pointer;
+}
+
+.cursorPointer{
+    cursor: pointer; 
+}
 
 .subHeading{
     font-weight: 500;

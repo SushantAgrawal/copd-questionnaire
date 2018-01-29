@@ -11,9 +11,9 @@
   <div class="tblContent multipleSelectCont" *ngIf="pageObject.type=='multipleSelect'">
     <table>
       <tr *ngFor="let item of pageObject.qustions ; let g = index" align="right">
-        <td *ngFor="let option of item.options ; let h = index" >
-          <label (click)="addValue(option)">{{option.text}}</label>
-          <mat-checkbox  [(ngModel)]="option.checked" [value]="option.text"></mat-checkbox>
+        <td *ngFor="let option of item.options ; let h = index">
+          <div (click)="addValue(option)" class="multipleSelectDiv"> {{option.text}}</div>
+          <mat-checkbox [(ngModel)]="option.checked" [value]="option.text"></mat-checkbox>
         </td>
       </tr>
     </table>
@@ -21,8 +21,8 @@
   <div class="tblContent contentAlign90x10" *ngIf="pageObject.type=='select'">
     <table *ngFor="let item of pageObject.qustions ; let g = index">
       <tr *ngFor="let option of item.options ; let h = index">
-        <td align="left" (click)="addValue(option)">
-          <label>{{option.text}}</label>
+        <td align="left" class="cursorPointer" (click)="addValue(option)">
+          <label class="cursorPointer">{{option.text}}</label>
         </td>
         <td align="left">
           <mat-checkbox [(ngModel)]="option.checked" [value]="option.text"></mat-checkbox>
@@ -78,8 +78,8 @@
         <mat-radio-group [(ngModel)]="item.answer_text">
           <table>
             <tr *ngFor="let option of item.options ; let h = index">
-              <td (click)="addRadio(option,item)">{{option.text}}</td>
-              <td >
+              <td (click)="addRadio(option,item)" class="cursorPointer">{{option.text}}</td>
+              <td>
                 <mat-radio-button [value]="option.text">
                 </mat-radio-button>
               </td>
@@ -96,14 +96,16 @@
           <td>{{item.text}}</td>
           <td>
             <div *ngIf="item.controlType=='multi'">
-                <input matInput [matDatepicker]="picker" [(ngModel)]="item.answer_date" readonly placeholder="Choose a date">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+              <!-- answer_text -->
+              <input [(ngModel)]="item.answer_text">
+              <input matInput [matDatepicker]="picker" [(ngModel)]="item.answer_date" readonly placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
             </div>
             <div *ngIf="item.controlType=='caln'">
-                <input matInput [matDatepicker]="picker1" [(ngModel)]="item.answer_date" readonly placeholder="Choose a date">
-                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                <mat-datepicker #picker1></mat-datepicker>
+              <input matInput [matDatepicker]="picker1" [(ngModel)]="item.answer_date" readonly placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
             </div>
             <div *ngIf="!item.controlType">
               <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="item.answer_text">

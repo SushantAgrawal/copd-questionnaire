@@ -28,7 +28,7 @@ export class AppService {
     httpGetUnknownError: 'Unknown error encountered while making http request'
   };
 
-  constructor( private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
     this.subject = new Subject();
     let rawParams = decodeURIComponent(window.location.search)
     let urlArray = rawParams.slice(rawParams.indexOf('?') + 1).split('&');
@@ -39,8 +39,9 @@ export class AppService {
     }, {});
     this.set('queryParams', urlObject);
     let welcome = this.get('queryParams')['type'] || 'NP';
+    let print = this.get('queryParams')['print'] || '0';
     welcome = _.toUpper(welcome);
-    router.navigate([welcomeMap[welcome]] , { queryParams: { type: welcome } });
+    router.navigate([welcomeMap[welcome]], { queryParams: { type: welcome, print: print } });
   }
   get(id) {
     return (this.global[id]);
@@ -74,7 +75,7 @@ export class AppService {
         this.getData(navMapPrint[key].questions, navMapPrint[key].quesitonHeader), {
           startY: (i > 0) && doc.autoTable.previous.finalY,
           margin: {
-              top: (i == 0) && 70,
+            top: (i == 0) && 70,
           },
           //startY: doc.autoTable.previous.finalY,
           pageBreak: 'avoid',
@@ -141,8 +142,8 @@ export class AppService {
     let route = (urlArray.length > 0) && (urlArray[urlArray.length - 1]);
     return (route);
   }
-  
-  
+
+
   transform() {
     let today = Date.now();
     var datePipe = new DatePipe("en-US");
@@ -161,7 +162,7 @@ export class AppService {
   };
 
   httpPost(id: string, body?: {}, queryParams?: {}) {
-  
+
     // let baseUrl = environment
     //   .maestroBaseUrl
     //   .replace(/\/$/, '');
@@ -210,7 +211,7 @@ export class AppService {
         httpParams = httpParams.append(x, queryParams[x]);
         return (httpParams);
       }, httpParams));
-      httpParams= httpParams?httpParams.append("random",Math.random().toString()):new HttpParams().append("random",Math.random().toString());
+      httpParams = httpParams ? httpParams.append("random", Math.random().toString()) : new HttpParams().append("random", Math.random().toString());
       if (url) {
         this
           .httpClient
