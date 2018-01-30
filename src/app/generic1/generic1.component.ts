@@ -18,12 +18,14 @@ export class Generic1Component implements OnInit {
   child1: any;
   progress: any;
   value: any;
+  colourIndex:any;
   timeFrame: any=['Days','Weeks','Months','Years'];
   row:any;
   numTimeDueration:any=['1','2','3','4','5','6','7','8','9','10','11 to 15','16 to 20','21 to 25','26 to 30','31+'];
  // month: any  =  [['January', '01'],  ['February', '02'],  ['March', '03'],  ['April', '04'],  ['May', '05'],  ['June', '06'],  ['July', '07'],  ['August', '08'],  ['September', '09'],  ['October', '10'],  ['November', '11'],  ['December', '12']];
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     private appService: AppService, private _sanitizer: DomSanitizer) {
+      this.colourIndex =0;
     let type = this.appService.get('queryParams').type || 'NP';
     activatedRoute
       .params
@@ -47,6 +49,7 @@ export class Generic1Component implements OnInit {
   }
   getCSSClasses(value) {
     let cssClass = '';
+    this.colourIndex = (this.value == 0) ? 0 : this.colourIndex ;
     let node;
     if (this.pageObject.domain && this.pageObject.domain == 'Clinical Awareness') {
       node = this.pageObject.qustions[value].node;
@@ -88,6 +91,12 @@ export class Generic1Component implements OnInit {
         }
       }
     }
+if(cssClass == '')
+{
+  cssClass = this.colourIndex%2==0?'':'altColour';
+  this.colourIndex++;
+}
+
     return cssClass;
   }
 }

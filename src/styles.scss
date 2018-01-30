@@ -197,8 +197,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 }
 .toggleBtnGroup .mat-button-toggle-group{
     box-shadow: 0 0px 0px 0px rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,.0)!important;
-    white-space:normal!important;
-    
+    white-space:normal!important;   
     
 }
 
@@ -217,8 +216,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
     background-color: #5b9bd5;
     color: #fff!important;
 }
-.toggleBtnGroup tr:nth-child(even){
-    background-color: #deebf7;
+// .toggleBtnGroup tr:nth-child(even){
+//     background-color: #deebf7;
+//   }
+
+  .altColour{
+    background-color: #deebf7; 
   }
 
 
@@ -252,10 +255,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
     background-color: #5b9bd5;
     color: #fff!important;
 }
+/*
 .mix-toggleBtnGroup tr:nth-child(even){
     background-color: #deebf7;
   }
-
+*/
 
 
 
