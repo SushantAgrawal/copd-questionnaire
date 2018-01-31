@@ -61,10 +61,7 @@ body{
     align-self: flex-start;
 }
 .btn-center{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    position:absolute;
+    margin: auto!important;
 }
 
 .btn-right{
