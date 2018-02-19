@@ -2664,8 +2664,9 @@ export const navMapPrint = {
             {
                 question: `How would you rate your energy level`,
                 answer: "3",
-            }
-        ]
+            }            
+        ],
+        score:24,
     },
     page3: {
         quesitonHeader: `Asthma Control Test (ACT)`,
@@ -2700,7 +2701,8 @@ export const navMapPrint = {
                 question: `How would you rate your asthma control during the past 4 weeks`,
                 answer: '',
             }
-        ]
+        ],
+        score:25,
     },
     page5: {
         quesitonHeader: `Dyspnea test (mMRC):`,
@@ -2709,7 +2711,8 @@ export const navMapPrint = {
                 question: `Select the response that best describes, when you become breathless:`,
                 answer: 'On level ground, I walk slower than people of the same age because of breathlessness, or have to stop for breath when walking at my own pace',
             }
-        ]
+        ],
+        score:1,
     },
     page6: {
         quesitonHeader: "The Quality of your Days",
